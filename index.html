@@ -198,7 +198,7 @@ ORDER BY return_rate_percent DESC;
       <button onclick="closeWindow('project-ecommerce-win')" style="float: right;">Zavřít</button>
     </div>
   </div>
-<div class="window draggable" id="project-crime-win" style="display: none; top: 120px; left: 240px; width: 600px;">
+<div class="window draggable" id="project-crime-win" style="display: none; top: 120px; left: 240px; width: 620px;">
   <div class="title-bar">
     <div class="title-bar-text">Analýza konvergence kriminality v EU - Detail</div>
     <div class="title-bar-controls">
@@ -207,27 +207,35 @@ ORDER BY return_rate_percent DESC;
   </div>
   <div class="window-body">
     <h3>Analýza konvergence kriminality v EU</h3>
-    <p>Datově-analytický projekt využívající metody strojového učení (k-means clustering) pro analýzu podobnosti profilů kriminality mezi evropskými státy a sledování jejich vývoje v čase.</p>
+    <p>Datově-analytický projekt zkoumající podobnosti a vývojové trendy kriminality napříč evropskými státy pomocí pokročilých metod výpočetní statistiky a strojového učení.</p>
     
     <p><strong>Ukázka vizualizace / shlukové analýzy:</strong></p>
     <div class="project-box" style="text-align: center;">
       <img src="assets/crime_clusters.png" alt="Ukázka clusteringu kriminality" style="max-width: 100%; border: 1px solid #808080;">
     </div>
 
-    <p><strong>Ukázka kódu (Python / Scikit-Learn):</strong></p>
+    <p><strong>Ukázka kódu (Data Pipeline & Clustering):</strong></p>
     <div class="field-row-stacked">
-      <textarea readonly rows="7" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+      <textarea readonly rows="10" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
 import pandas as pd
-from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
 
-# Načtení a standardizace dat o kriminalitě v EU
+# 1. Příprava a standardizace datových ukazatelů kriminality
 scaler = StandardScaler()
-X_scaled = scaler.fit_transform(df[['theft_rate', 'burglary_rate', 'homicide_rate']])
+X_scaled = scaler.fit_transform(df[crime_features])
 
-# Shlukování států pomocí K-Means
+# 2. Redukce dimenzionality pro zachování hlavní variability (PCA)
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+# 3. Segmentace států do homogenních shluků (K-Means)
 kmeans = KMeans(n_clusters=4, random_state=42)
-df['cluster'] = kmeans.fit_predict(X_scaled)
+df['cluster'] = kmeans.fit_predict(X_pca)
+
+# Výpočet průměrných hodnot parametrů pro jednotlivé shluky
+cluster_profile = df.groupby('cluster')[crime_features].mean()
       </textarea>
     </div>
 
