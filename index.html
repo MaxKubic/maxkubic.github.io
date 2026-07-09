@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max Kubíček | Portfolio</title>
   
-  <!-- Windows 95 CSS Knihovna -->
   <link rel="stylesheet" href="https://unpkg.com/98.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Plocha s ikonami -->
   <div class="desktop">
     
     <div class="desktop-icon" onclick="openWindow('about-win')">
@@ -36,8 +34,7 @@
 
   </div>
 
-  <!-- OKNO 1: O MNĚ -->
-  <div class="window draggable" id="about-win" style="top: 40px; left: 100px; width: 450px;">
+  <div class="window draggable" id="about-win" style="display: none; top: 40px; left: 100px; width: 450px;">
     <div class="title-bar">
       <div class="title-bar-text">O mně - Max Kubíček</div>
       <div class="title-bar-controls">
@@ -52,15 +49,14 @@
       <hr>
       <p>
         Ahoj! Jsem Max Kubíček a baví mě objevovat příběhy ukryté v datech.
-        Vystudoval/a jsem Aplikovanou informatiku na VŠE, díky čemuž mám blízko jak k vývoji a technologiím, tak k ekonomickému a byznysovému myšlení. Zaměřuji se na datovou analytiku a Data Science.
-        Co umím a s čím pracuji: [Python, SQL, Power BI, Pandas, Git, ...]
-        Co mě baví: Čštění a příprava dat, explorativní analýza, tvorba interaktivních reportů a objevování souvislostí tam, kde je ostatní nevidí.
+        Vystudoval jsem Aplikovanou informatiku na VŠE, díky čemuž mám blízko jak k vývoji a technologiím, tak k ekonomickému a byznysovému myšlení. Zaměřuji se na datovou analytiku a Data Science.
       </p>
+      <p><strong>Co umím a s čím pracuji:</strong> Python, SQL, Power BI, Pandas, Git, GitHub</p>
+      <p><strong>Co mě baví:</strong> Čištění a příprava dat, explorativní analýza, tvorba interaktivních reportů a objevování souvislostí tam, kde je ostatní nevidí.</p>
     </div>
   </div>
 
-  <!-- OKNO 2: PROJEKTY -->
-  <div class="window draggable" id="projects-win" style="top: 80px; left: 180px; width: 550px;">
+  <div class="window draggable" id="projects-win" style="display: none; top: 80px; left: 180px; width: 550px;">
     <div class="title-bar">
       <div class="title-bar-text">Vybrané projekty</div>
       <div class="title-bar-controls">
@@ -86,8 +82,7 @@
     </div>
   </div>
 
-  <!-- OKNO 3: DOVEDNOSTI -->
-  <div class="window draggable" id="skills-win" style="top: 140px; left: 260px; width: 380px;">
+  <div class="window draggable" id="skills-win" style="display: none; top: 140px; left: 260px; width: 380px;">
     <div class="title-bar">
       <div class="title-bar-text">Dovednosti.txt - Poznámkový blok</div>
       <div class="title-bar-controls">
@@ -99,8 +94,7 @@
     </div>
   </div>
 
-  <!-- OKNO 4: KONTAKT -->
-  <div class="window draggable" id="contact-win" style="top: 200px; left: 340px; width: 350px;">
+  <div class="window draggable" id="contact-win" style="display: none; top: 200px; left: 340px; width: 350px;">
     <div class="title-bar">
       <div class="title-bar-text">Kontakt</div>
       <div class="title-bar-controls">
@@ -116,14 +110,12 @@
     </div>
   </div>
 
-  <!-- TASKBAR (Hlavní lišta dole) -->
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="https://win95icons.com/png/windows_slanted-0.png" width="16" alt="Start">
       <strong>Start</strong>
     </button>
     
-    <!-- Nabídka Start -->
     <div class="start-menu" id="startMenu">
       <div class="start-sidebar"><span>Windows</span>95</div>
       <div class="start-items">
@@ -146,6 +138,10 @@
     function openWindow(id) {
       const win = document.getElementById(id);
       win.style.display = 'block';
+      
+      // Zavře Start menu při otevření okna (pokud bylo otevřené)
+      document.getElementById('startMenu').style.display = 'none';
+
       // Přesunout okno dopředu při kliknutí
       document.querySelectorAll('.window').forEach(w => w.style.zIndex = 1);
       win.style.zIndex = 10;
