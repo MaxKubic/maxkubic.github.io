@@ -256,23 +256,55 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
   </div>
 </div>
   
-  <div class="window draggable" id="recycle-win" style="display: none; top: 150px; left: 300px; width: 400px;">
+  <div class="window draggable" id="recycle-win" style="display: none; top: 150px; left: 300px; width: 420px;">
   <div class="title-bar">
-    <div class="title-bar-text">Koš - Přehled smazaných položek</div>
+    <div class="title-bar-text">Koš - Obsah</div>
     <div class="title-bar-controls">
       <button aria-label="Close" onclick="closeWindow('recycle-win')"></button>
     </div>
   </div>
   <div class="window-body">
-    <div class="project-box" style="background: #fff; padding: 10px;">
-      <p>⚠️ <strong>Složka je prázdná.</strong></p>
-      <hr>
-      <p><i>„Můj první projekt z prváku“</i></p>
-      <br>
-      <small style="color: #555;">Status: 0 chyb v datové pipeline | 100% čistá data</small>
+    <p>Položky určené k trvalému smazání:</p>
+    
+    <div class="project-box clickable-project" onclick="openWindow('first-project-win')" style="display: flex; align-items: center; gap: 12px; padding: 8px;">
+      <img src="assets/w98_keys.ico" alt="Soubor" style="width: 32px; height: 32px; image-rendering: pixelated;">
+      <div>
+        <strong style="display: block;">Můj první projekt z prváku.py</strong>
+        <small style="color: #666;">Smazáno: Před 3 lety | Velikost: 1.2 KB</small>
+      </div>
     </div>
+
     <hr>
     <button onclick="closeWindow('recycle-win')" style="float: right;">Vyprázdnit koš</button>
+  </div>
+</div>
+
+<div class="window draggable" id="first-project-win" style="display: none; top: 180px; left: 340px; width: 450px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Můj první projekt z prváku.py</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close" onclick="closeWindow('first-project-win')"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <h3>Hello World & Kalkulačka (2021)</h3>
+    <p><i>„Můj úplně první skript na VŠE. Každý nějak začínal – 50 podmínek IF a nulové ošetření chyb. Naštěstí dnes už píšu kód trochu jinak.“</i></p>
+    
+    <div class="field-row-stacked">
+      <textarea readonly rows="7" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+# Můj historicky první Python kód
+print("Vítejte v mé kalkulačce!")
+a = int(input("Zadej číslo 1: "))
+b = int(input("Zadej číslo 2: "))
+
+if op == "+":
+    print("Výsledek:", a + b)
+# ... dalších 40 řádků bez try-except bloku :-)
+      </textarea>
+    </div>
+
+    <hr>
+    <button onclick="closeWindow('first-project-win')" style="float: right;">Obnovit ze smazaných</button>
   </div>
 </div>
   
