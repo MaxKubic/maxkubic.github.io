@@ -14,7 +14,7 @@
     
     <div class="desktop-icon" onclick="openWindow('about-win')">
       <img src="assets/w98_users.ico" alt="O mně">
-      <span>O mně</span>
+      <span>O mně.exe</span>
     </div>
 
     <div class="desktop-icon" onclick="openWindow('projects-win')">
@@ -24,12 +24,12 @@
 
     <div class="desktop-icon" onclick="openWindow('skills-win')">
       <img src="assets/w98_keys.ico" alt="Dovednosti">
-      <span>Dovednosti</span>
+      <span>Dovednosti.txt</span>
     </div>
 
     <div class="desktop-icon" onclick="openWindow('contact-win')">
       <img src="assets/w98_mailbox_world.ico" alt="Kontakt">
-      <span>Kontakt</span>
+      <span>Kontakt.msg</span>
     </div>
 
   </div>
@@ -67,12 +67,12 @@
     </div>
     <div class="window-body">
 
-     <div class="project-box clickable-project" onclick="openWindow('project-ecommerce-win')">
-  <h3>E-commerce Data Warehouse</h3>
-  <p>Projekt zaměřený na návrh datového skladu, práci s SQL/Pythonem a tvorbu analytického dashboardu pro e-commerce data.</p>
-  <p><strong>Nástroje:</strong> SQL, Python, Git, GitHub</p>
-  <small style="color: #000080; text-decoration: underline;">Klikněte pro detail a kód &raquo;</small>
-</div>
+      <div class="project-box clickable-project" onclick="openWindow('project-ecommerce-win')">
+        <h3>E-commerce Data Warehouse</h3>
+        <p>Projekt zaměřený na návrh datového skladu, práci s SQL/Pythonem a tvorbu analytického dashboardu pro e-commerce data.</p>
+        <p><strong>Nástroje:</strong> SQL, Python, Git, GitHub</p>
+        <small style="color: #000080; text-decoration: underline;">Klikněte pro detail a kód &raquo;</small>
+      </div>
 
       <div class="project-box">
         <h3>Analýza konvergence kriminality v EU</h3>
@@ -110,7 +110,8 @@
       <button onclick="closeWindow('contact-win')" style="float: right;">OK</button>
     </div>
   </div>
-<div class="window draggable" id="project-ecommerce-win" style="display: none; top: 100px; left: 220px; width: 600px;">
+
+  <div class="window draggable" id="project-ecommerce-win" style="display: none; top: 100px; left: 220px; width: 600px;">
     <div class="title-bar">
       <div class="title-bar-text">E-commerce Data Warehouse - Detail</div>
       <div class="title-bar-controls">
@@ -125,7 +126,7 @@
       <div class="project-box" style="text-align: center;">
         <img src="assets/dashboard_preview.png" alt="Screenshot projektu" style="max-width: 100%; border: 1px solid #808080;">
       </div>
-      
+
       <p><strong>Ukázka kódu (SQL / ETL):</strong></p>
       <div class="field-row-stacked">
         <textarea readonly rows="6" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
@@ -145,7 +146,7 @@ ORDER BY revenue DESC;
       <button onclick="closeWindow('project-ecommerce-win')" style="float: right;">Zavřít</button>
     </div>
   </div>
-  
+
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="assets/w98_windows.ico" width="16" alt="Start">
@@ -166,24 +167,27 @@ ORDER BY revenue DESC;
   </div>
 
   <script>
-    // Zavírání a otevírání oken
+    // Zavírání oken
     function closeWindow(id) {
       document.getElementById(id).style.display = 'none';
     }
 
+    // Otevírání oken + přesun nahoru
     function openWindow(id) {
       const win = document.getElementById(id);
-      win.style.display = 'block';
-      
-      // Zavře Start menu při otevření okna (pokud bylo otevřené)
-      document.getElementById('startMenu').style.display = 'none';
+      if (win) {
+        win.style.display = 'block';
+        
+        // Zavře Start menu, pokud bylo otevřené
+        document.getElementById('startMenu').style.display = 'none';
 
-      // Přesunout okno dopředu při kliknutí
-      document.querySelectorAll('.window').forEach(w => w.style.zIndex = 1);
-      win.style.zIndex = 10;
+        // Přesune otevřené okno do popředí
+        document.querySelectorAll('.window').forEach(w => w.style.zIndex = 1);
+        win.style.zIndex = 10;
+      }
     }
 
-    // Toggle Start menu
+    // Přepínání nabídky Start
     function toggleStartMenu() {
       const menu = document.getElementById('startMenu');
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
@@ -199,7 +203,7 @@ ORDER BY revenue DESC;
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Bring window to front on click
+    // Přesun okna do popředí při kliknutí
     document.querySelectorAll('.window').forEach(win => {
       win.addEventListener('mousedown', () => {
         document.querySelectorAll('.window').forEach(w => w.style.zIndex = 1);
