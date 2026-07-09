@@ -1,66 +1,142 @@
-* {
-  box-sizing: border-box;
-}
-
+/* Základní pozadí Windows 95 (Teal) */
 body {
+  background-color: #008080;
   margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #222;
-  background: #f7f7f7;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
+  user-select: none;
 }
 
-.hero {
-  padding: 80px 20px;
-  text-align: center;
-  background: #111827;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-.button {
-  display: inline-block;
-  padding: 12px 20px;
-  background: white;
-  color: #111827;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-section {
-  margin-bottom: 50px;
-}
-
-h2 {
-  font-size: 28px;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 8px;
-}
-
-.project {
-  background: white;
+/* Ikony na ploše */
+.desktop {
   padding: 20px;
-  margin: 20px 0;
-  border-radius: 8px;
-  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: max-content;
 }
 
-.project h3 {
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px black;
+}
+
+.desktop-icon img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 5px;
+}
+
+.desktop-icon:hover span {
+  background-color: #000080;
+}
+
+/* Styly pro okna */
+.window {
+  position: absolute;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-weight: bold;
+  color: #555;
+  margin-top: -5px;
+}
+
+.project-box {
+  background: #fff;
+  border: 2px inset #dfdfdf;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.project-box h3 {
   margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Dolní lišta (Taskbar) */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 4px;
+  z-index: 1000;
+}
+
+.start-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.taskbar-time {
+  border: 2px inset #fff;
+  padding: 2px 8px;
+  font-size: 12px;
+  background: #c0c0c0;
+}
+
+/* Nabídka Start */
+.start-menu {
+  display: none;
+  position: absolute;
+  bottom: 30px;
+  left: 2px;
+  width: 180px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #808080 #808080 #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  flex-direction: row;
+}
+
+.start-sidebar {
+  background: #808080;
+  color: #c0c0c0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  padding: 8px 4px;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.start-sidebar span {
+  color: #fff;
+}
+
+.start-items {
+  width: 100%;
+}
+
+.start-item {
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.start-item:hover {
+  background-color: #000080;
+  color: white;
 }
