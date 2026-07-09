@@ -33,6 +33,11 @@
       <img src="assets/w98_mailbox_world.ico" alt="Kontakt">
       <span>Kontakt.msg</span>
     </div>
+    
+    <div class="desktop-icon" onclick="window.open('assets/CV_Max_Kubicek.pdf', '_blank')">
+      <img src="assets/w2k-programs.ico" alt="Životopis PDF">
+      <span>Životopis.pdf</span>
+    </div>
 
   </div>
 
@@ -245,6 +250,27 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
     <button onclick="closeWindow('project-crime-win')" style="float: right;">Zavřít</button>
   </div>
 </div>
+  
+  <div class="window draggable" id="recycle-win" style="display: none; top: 150px; left: 300px; width: 400px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Koš - Přehled smazaných položek</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close" onclick="closeWindow('recycle-win')"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <div class="project-box" style="background: #fff; padding: 10px;">
+      <p>⚠️ <strong>Složka je prázdná.</strong></p>
+      <hr>
+      <p><i>„Můj první projekt z prváku“</i></p>
+      <br>
+      <small style="color: #555;">Status: 0 chyb v datové pipeline | 100% čistá data</small>
+    </div>
+    <hr>
+    <button onclick="closeWindow('recycle-win')" style="float: right;">Vyprázdnit koš</button>
+  </div>
+</div>
+  
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="assets/w98_windows.ico" width="16" alt="Start">
@@ -253,11 +279,13 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
     
     <div class="start-menu" id="startMenu">
       <div class="start-sidebar"><span>Windows</span>95</div>
-      <div class="start-items">
+     <div class="start-items">
         <div class="start-item" onclick="openWindow('about-win')">O mně</div>
         <div class="start-item" onclick="openWindow('projects-win')">Projekty</div>
         <div class="start-item" onclick="openWindow('skills-win')">Dovednosti</div>
         <div class="start-item" onclick="openWindow('contact-win')">Kontakt</div>
+        <hr style="margin: 2px 0; border-style: inset;">
+        <div class="start-item" onclick="window.open('assets/CV_Max_Kubicek.pdf', '_blank')">📄 Životopis (PDF)</div>
       </div>
     </div>
 
