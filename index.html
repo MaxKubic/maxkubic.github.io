@@ -109,7 +109,42 @@
       <button onclick="closeWindow('contact-win')" style="float: right;">OK</button>
     </div>
   </div>
+<div class="window draggable" id="project-ecommerce-win" style="display: none; top: 100px; left: 220px; width: 600px;">
+    <div class="title-bar">
+      <div class="title-bar-text">E-commerce Data Warehouse - Detail</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" onclick="closeWindow('project-ecommerce-win')"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <h3>E-commerce Data Warehouse</h3>
+      <p>Projekt zaměřený na návrh datového skladu, práci s SQL/Pythonem a tvorbu analytického dashboardu.</p>
+      
+      <p><strong>Ukázka dashboardu / výstupu:</strong></p>
+      <div class="project-box" style="text-align: center;">
+        <img src="assets/dashboard_preview.png" alt="Screenshot projektu" style="max-width: 100%; border: 1px solid #808080;">
+      </div>
+      
+      <p><strong>Ukázka kódu (SQL / ETL):</strong></p>
+      <div class="field-row-stacked">
+        <textarea readonly rows="6" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+-- Příprava agregovaných dat pro dashboard
+SELECT 
+    c.country,
+    COUNT(o.order_id) AS total_orders,
+    SUM(o.total_amount) AS revenue
+FROM orders o
+JOIN customers c ON o.customer_id = c.id
+GROUP BY c.country
+ORDER BY revenue DESC;
+        </textarea>
+      </div>
 
+      <hr>
+      <button onclick="closeWindow('project-ecommerce-win')" style="float: right;">Zavřít</button>
+    </div>
+  </div>
+  
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="assets/w98_windows.ico" width="16" alt="Start">
