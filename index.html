@@ -166,7 +166,7 @@ ORDER BY revenue DESC;
     <div class="taskbar-time" id="clock">12:00</div>
   </div>
 
-  <script>
+ <script>
     // Zavírání oken
     function closeWindow(id) {
       document.getElementById(id).style.display = 'none';
@@ -203,13 +203,62 @@ ORDER BY revenue DESC;
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Přesun okna do popředí při kliknutí
-    document.querySelectorAll('.window').forEach(win => {
-      win.addEventListener('mousedown', () => {
+    // ==========================================
+    // LOGIKA PRO POSOUVÁNÍ OKEN (DRAG & DROP)
+    // ==========================================
+    function makeDraggable(element) {
+      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      const header = element.querySelector('.title-bar');
+
+      // Uchopení za horní lištu (title-bar)
+      if (header) {
+        header.style.cursor = 'move';
+        header.onmousedown = dragMouseDown;
+      }
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        // Ignorovat, pokud uživatel kliknul na tlačítka Zavřít/Křížek v liště
+        if (e.target.tagName.toLowerCase() === 'button') return;
+
+        e.preventDefault();
+        
+        // Přesunout okno dopředu
         document.querySelectorAll('.window').forEach(w => w.style.zIndex = 1);
-        win.style.zIndex = 10;
-      });
-    });
+        element.style.zIndex = 10;
+
+        // Souřadnice kurzoru při stisku
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
+      }
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+
+        // Výpočet nové pozice
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+
+        // Nastavení nové pozice prvku
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        // Zastavit posun při uvolnění tlačítka myši
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+
+    // Aktivovat posouvání pro všechna okna s třídou .draggable
+    document.querySelectorAll('.window.draggable').forEach(makeDraggable);
   </script>
 </body>
 </html>
