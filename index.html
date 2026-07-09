@@ -74,11 +74,12 @@
         <small style="color: #000080; text-decoration: underline;">Klikněte pro detail a kód &raquo;</small>
       </div>
 
-      <div class="project-box">
+     <div class="project-box clickable-project" onclick="openWindow('project-crime-win')">
         <h3>Analýza konvergence kriminality v EU</h3>
         <p>Datově-analytický projekt využívající metody strojového učení pro analýzu podobnosti profilů kriminality mezi evropskými státy.</p>
         <p><strong>Nástroje:</strong> Python, clustering, data visualization</p>
-      </div>
+  <small style="color: #000080; text-decoration: underline;">Klikněte pro detail a kód &raquo;</small>
+</div>
 
     </div>
   </div>
@@ -197,7 +198,43 @@ ORDER BY return_rate_percent DESC;
       <button onclick="closeWindow('project-ecommerce-win')" style="float: right;">Zavřít</button>
     </div>
   </div>
+<div class="window draggable" id="project-crime-win" style="display: none; top: 120px; left: 240px; width: 600px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Analýza konvergence kriminality v EU - Detail</div>
+    <div class="title-bar-controls">
+      <button aria-label="Close" onclick="closeWindow('project-crime-win')"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <h3>Analýza konvergence kriminality v EU</h3>
+    <p>Datově-analytický projekt využívající metody strojového učení (k-means clustering) pro analýzu podobnosti profilů kriminality mezi evropskými státy a sledování jejich vývoje v čase.</p>
+    
+    <p><strong>Ukázka vizualizace / shlukové analýzy:</strong></p>
+    <div class="project-box" style="text-align: center;">
+      <img src="assets/crime_clusters.png" alt="Ukázka clusteringu kriminality" style="max-width: 100%; border: 1px solid #808080;">
+    </div>
 
+    <p><strong>Ukázka kódu (Python / Scikit-Learn):</strong></p>
+    <div class="field-row-stacked">
+      <textarea readonly rows="7" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+import pandas as pd
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
+
+# Načtení a standardizace dat o kriminalitě v EU
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(df[['theft_rate', 'burglary_rate', 'homicide_rate']])
+
+# Shlukování států pomocí K-Means
+kmeans = KMeans(n_clusters=4, random_state=42)
+df['cluster'] = kmeans.fit_predict(X_scaled)
+      </textarea>
+    </div>
+
+    <hr>
+    <button onclick="closeWindow('project-crime-win')" style="float: right;">Zavřít</button>
+  </div>
+</div>
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="assets/w98_windows.ico" width="16" alt="Start">
