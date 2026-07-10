@@ -253,6 +253,127 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
     <button onclick="closeWindow('project-crime-win')" style="float: right;">Zavřít</button>
   </div>
 </div>
+ <div class="window draggable" id="project-fraud-win" style="display: none; top: 120px; left: 240px; width: 620px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Fraud Detection - Detail</div>
+
+    <div class="title-bar-controls">
+      <button
+        aria-label="Close"
+        onclick="closeWindow('project-fraud-win')">
+      </button>
+    </div>
+  </div>
+
+  <div class="window-body">
+    <h3>Fraud Detection</h3>
+
+    <p>
+      Projekt zaměřený na detekci podvodných finančních transakcí pomocí
+      průzkumné analýzy dat, předzpracování, logistické regrese a webové
+      aplikace vytvořené ve Streamlitu.
+    </p>
+
+    <p>
+      Model vyhodnocuje typ transakce, její částku a změny zůstatků na účtu
+      odesílatele a příjemce. Pro zpracování dat je použit Scikit-learn Pipeline,
+      který kombinuje standardizaci numerických proměnných, One-Hot Encoding
+      kategoriálních hodnot a klasifikační model.
+    </p>
+
+    <p><strong>Ukázka Streamlit aplikace:</strong></p>
+
+    <div class="project-box" style="text-align: center;">
+      <img
+        src="assets/fraud_detection_app.png"
+        alt="Ukázka Streamlit aplikace pro detekci podvodných transakcí"
+        style="max-width: 100%; border: 1px solid #808080;">
+    </div>
+
+    <p><strong>Ukázka kódu – Machine Learning Pipeline:</strong></p>
+
+    <div class="field-row-stacked">
+      <textarea
+        readonly
+        rows="15"
+        style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+
+categorical = ["type"]
+
+numeric = [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest"
+]
+
+preprocessor = ColumnTransformer(
+    transformers=[
+        ("num", StandardScaler(), numeric),
+        ("cat", OneHotEncoder(
+            drop="first",
+            handle_unknown="ignore"
+        ), categorical)
+    ]
+)
+
+pipeline = Pipeline([
+    ("prep", preprocessor),
+    ("clf", LogisticRegression(
+        class_weight="balanced",
+        max_iter=1000
+    ))
+])
+
+pipeline.fit(X_train, y_train)
+      </textarea>
+    </div>
+
+    <p><strong>Použité technologie:</strong></p>
+
+    <ul>
+      <li>Python</li>
+      <li>Pandas a NumPy</li>
+      <li>Matplotlib a Seaborn</li>
+      <li>Scikit-learn</li>
+      <li>Joblib</li>
+      <li>Streamlit</li>
+    </ul>
+
+    <p>
+      <strong>Dataset:</strong>
+      <a
+        href="https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download"
+        target="_blank"
+        rel="noopener noreferrer">
+        Fraud Detection Dataset na Kaggle
+      </a>
+    </p>
+
+    <p>
+      <strong>GitHub:</strong>
+      <a
+        href="https://github.com/MaxKubic/Fraud_Detection"
+        target="_blank"
+        rel="noopener noreferrer">
+        Zobrazit repozitář
+      </a>
+    </p>
+
+    <hr>
+
+    <button
+      onclick="closeWindow('project-fraud-win')"
+      style="float: right;">
+      Zavřít
+    </button>
+  </div>
+</div>
   
   <div class="window draggable" id="recycle-win" style="display: none; top: 150px; left: 300px; width: 420px;">
   <div class="title-bar">
