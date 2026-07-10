@@ -307,7 +307,10 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
     <button onclick="closeWindow('project-crime-win')" style="float: right;">Zavřít</button>
   </div>
 </div>
- <div class="window draggable" id="project-fraud-win" style="display: none; top: 120px; left: 240px; width: 620px;">
+<div class="window draggable"
+     id="project-fraud-win"
+     style="display: none; top: 60px; left: 120px; width: 1050px; max-height: 820px;">
+
   <div class="title-bar">
     <div class="title-bar-text">Fraud Detection - Detail</div>
 
@@ -319,38 +322,83 @@ cluster_profile = df.groupby('cluster')[crime_features].mean()
     </div>
   </div>
 
-  <div class="window-body">
+  <div class="window-body"
+       style="max-height: 760px; overflow-y: auto;">
+
     <h3>Fraud Detection</h3>
 
-    <p>
-      Projekt zaměřený na detekci podvodných finančních transakcí pomocí
-      průzkumné analýzy dat, předzpracování, logistické regrese a webové
-      aplikace vytvořené ve Streamlitu.
-    </p>
+    <div style="
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+      gap: 16px;
+      align-items: start;
+    ">
 
-    <p>
-      Model vyhodnocuje typ transakce, její částku a změny zůstatků na účtu
-      odesílatele a příjemce. Pro zpracování dat je použit Scikit-learn Pipeline,
-      který kombinuje standardizaci numerických proměnných, One-Hot Encoding
-      kategoriálních hodnot a klasifikační model.
-    </p>
+      <!-- LEVÝ SLOUPEC -->
+      <div>
+        <p><strong>Ukázka Streamlit aplikace:</strong></p>
 
-    <p><strong>Ukázka Streamlit aplikace:</strong></p>
+        <div class="project-box"
+             style="text-align: center; padding: 8px;">
 
-    <div class="project-box" style="text-align: center;">
-      <img
-        src="assets/fraud_detection_app.png"
-        alt="Ukázka Streamlit aplikace pro detekci podvodných transakcí"
-        style="max-width: 100%; border: 1px solid #808080;">
-    </div>
+          <img
+            src="assets/fraud_detection_app.png"
+            alt="Ukázka Streamlit aplikace pro detekci podvodných transakcí"
+            style="
+              width: 100%;
+              max-height: 610px;
+              object-fit: contain;
+              border: 1px solid #808080;
+              display: block;
+            ">
+        </div>
+      </div>
 
-    <p><strong>Ukázka kódu – Machine Learning Pipeline:</strong></p>
+      <!-- PRAVÝ SLOUPEC -->
+      <div>
+        <p>
+          Projekt zaměřený na detekci podvodných finančních transakcí
+          pomocí průzkumné analýzy dat, předzpracování, logistické regrese
+          a webové aplikace vytvořené ve Streamlitu.
+        </p>
 
-    <div class="field-row-stacked">
-      <textarea
-        readonly
-        rows="15"
-        style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
+        <p>
+          Model vyhodnocuje typ transakce, její částku a změny zůstatků
+          na účtu odesílatele a příjemce.
+        </p>
+
+        <p>
+          Pro zpracování dat je použit Scikit-learn Pipeline kombinující
+          standardizaci numerických proměnných, One-Hot Encoding
+          a logistickou regresi.
+        </p>
+
+        <p><strong>Použité technologie:</strong></p>
+
+        <ul style="margin-top: 4px;">
+          <li>Python</li>
+          <li>Pandas a NumPy</li>
+          <li>Matplotlib a Seaborn</li>
+          <li>Scikit-learn</li>
+          <li>Joblib</li>
+          <li>Streamlit</li>
+        </ul>
+
+        <p><strong>Ukázka Machine Learning Pipeline:</strong></p>
+
+        <div class="field-row-stacked">
+          <textarea
+            readonly
+            rows="18"
+            style="
+              width: 100%;
+              box-sizing: border-box;
+              font-family: monospace;
+              font-size: 12px;
+              background: #000;
+              color: #00ff00;
+              resize: none;
+            ">
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.linear_model import LogisticRegression
@@ -366,15 +414,13 @@ numeric = [
     "newbalanceDest"
 ]
 
-preprocessor = ColumnTransformer(
-    transformers=[
-        ("num", StandardScaler(), numeric),
-        ("cat", OneHotEncoder(
-            drop="first",
-            handle_unknown="ignore"
-        ), categorical)
-    ]
-)
+preprocessor = ColumnTransformer([
+    ("num", StandardScaler(), numeric),
+    ("cat", OneHotEncoder(
+        drop="first",
+        handle_unknown="ignore"
+    ), categorical)
+])
 
 pipeline = Pipeline([
     ("prep", preprocessor),
@@ -385,39 +431,31 @@ pipeline = Pipeline([
 ])
 
 pipeline.fit(X_train, y_train)
-      </textarea>
+          </textarea>
+        </div>
+
+        <p>
+          <strong>Dataset:</strong><br>
+          <a
+            href="https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download"
+            target="_blank"
+            rel="noopener noreferrer">
+            Fraud Detection Dataset na Kaggle
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong><br>
+          <a
+            href="https://github.com/MaxKubic/Fraud_Detection"
+            target="_blank"
+            rel="noopener noreferrer">
+            Zobrazit repozitář
+          </a>
+        </p>
+      </div>
+
     </div>
-
-    <p><strong>Použité technologie:</strong></p>
-
-    <ul>
-      <li>Python</li>
-      <li>Pandas a NumPy</li>
-      <li>Matplotlib a Seaborn</li>
-      <li>Scikit-learn</li>
-      <li>Joblib</li>
-      <li>Streamlit</li>
-    </ul>
-
-    <p>
-      <strong>Dataset:</strong>
-      <a
-        href="https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download"
-        target="_blank"
-        rel="noopener noreferrer">
-        Fraud Detection Dataset na Kaggle
-      </a>
-    </p>
-
-    <p>
-      <strong>GitHub:</strong>
-      <a
-        href="https://github.com/MaxKubic/Fraud_Detection"
-        target="_blank"
-        rel="noopener noreferrer">
-        Zobrazit repozitář
-      </a>
-    </p>
 
     <hr>
 
@@ -426,6 +464,8 @@ pipeline.fit(X_train, y_train)
       style="float: right;">
       Zavřít
     </button>
+
+    <div style="clear: both;"></div>
   </div>
 </div>
   
