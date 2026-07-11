@@ -2,202 +2,509 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
   <title>Max Kubíček | Portfolio</title>
 
-  <link rel="icon" type="image/x-icon" href="assets/w98_windows.ico" />
-  <link rel="stylesheet" href="https://unpkg.com/98.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="assets/w98_windows.ico"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/98.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
 </head>
-  <body>
+
+<body>
+
+  <!-- =========================
+       IKONY NA PLOŠE
+       ========================= -->
 
   <div class="desktop">
-    
-    <div class="desktop-icon" onclick="openWindow('about-win')">
-      <img src="assets/w98_users.ico" alt="O mně">
+
+    <div
+      class="desktop-icon"
+      onclick="openWindow('about-win')"
+    >
+      <img
+        src="assets/w98_users.ico"
+        alt="O mně"
+      >
       <span>O mně</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('projects-win')">
-      <img src="assets/w2k-programs.ico" alt="Projekty">
+    <div
+      class="desktop-icon"
+      onclick="openWindow('projects-win')"
+    >
+      <img
+        src="assets/w2k-programs.ico"
+        alt="Projekty"
+      >
       <span>Projekty</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('skills-win')">
-      <img src="assets/w98_keys.ico" alt="Dovednosti">
+    <div
+      class="desktop-icon"
+      onclick="openWindow('skills-win')"
+    >
+      <img
+        src="assets/w98_keys.ico"
+        alt="Dovednosti"
+      >
       <span>Dovednosti</span>
     </div>
 
-    <div class="desktop-icon" onclick="openWindow('contact-win')">
-      <img src="assets/w98_mailbox_world.ico" alt="Kontakt">
+    <div
+      class="desktop-icon"
+      onclick="openWindow('contact-win')"
+    >
+      <img
+        src="assets/w98_mailbox_world.ico"
+        alt="Kontakt"
+      >
       <span>Kontakt</span>
     </div>
-    
-    <div class="desktop-icon" onclick="openWindow('cv-win')">
-  <img src="assets/w2k_text_document.ico" alt="Životopis PDF">
-  <span>Životopis.pdf</span>
-</div>
 
-    <div class="desktop-icon" onclick="openWindow('recycle-win')">
-  <img src="assets/w98_recycle_bin_full_cool.ico" alt="Koš">
-  <span>Koš</span>
-</div>
+    <div
+      class="desktop-icon"
+      onclick="openWindow('cv-win')"
+    >
+      <img
+        src="assets/w2k_text_document.ico"
+        alt="Životopis PDF"
+      >
+      <span>Životopis.pdf</span>
+    </div>
+
+    <div
+      class="desktop-icon"
+      onclick="openWindow('recycle-win')"
+    >
+      <img
+        src="assets/w98_recycle_bin_full_cool.ico"
+        alt="Koš"
+      >
+      <span>Koš</span>
+    </div>
 
   </div>
 
-  <div class="window draggable" id="about-win" style="display: none; top: 40px; left: 100px; width: 450px;">
+
+  <!-- =========================
+       O MNĚ
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="about-win"
+    style="
+      display: none;
+      top: 40px;
+      left: 100px;
+      width: 450px;
+    "
+  >
+
     <div class="title-bar">
-      <div class="title-bar-text">O mně - Max Kubíček</div>
+
+      <div class="title-bar-text">
+        O mně - Max Kubíček
+      </div>
+
       <div class="title-bar-controls">
         <button aria-label="Minimize"></button>
         <button aria-label="Maximize"></button>
         <button aria-label="Close"></button>
       </div>
+
     </div>
+
     <div class="window-body">
+
       <h2>Max Kubíček</h2>
-      <p class="subtitle">Data Analytics | Data Science | Statistika</p>
+
+      <p class="subtitle">
+        Data Analytics | Data Science | Statistika
+      </p>
+
       <hr>
+
       <p>
-        Ahoj! Jsem Max Kubíček a baví mě objevovat příběhy ukryté v datech.
-        Vystudoval jsem Aplikovanou informatiku na VŠE, díky čemuž mám blízko jak k vývoji a technologiím, tak k ekonomickému a byznysovému myšlení. Zaměřuji se na datovou analytiku a Data Science.
+        Ahoj! Jsem Max Kubíček a baví mě objevovat příběhy ukryté
+        v datech. Vystudoval jsem Aplikovanou informatiku na VŠE,
+        díky čemuž mám blízko jak k vývoji a technologiím, tak
+        k ekonomickému a byznysovému myšlení. Zaměřuji se na
+        datovou analytiku a Data Science.
       </p>
-      <p><strong>Co umím a s čím pracuji:</strong> Python, SQL, Power BI, Pandas, Git, GitHub, Scikit, Matplot</p>
-      <p><strong>Co mě baví:</strong> Čištění a příprava dat, explorativní analýza, tvorba interaktivních reportů a objevování souvislostí tam, kde je ostatní nevidí.</p>
+
+      <p>
+        <strong>Co umím a s čím pracuji:</strong>
+        Python, SQL, Power BI, Pandas, Git, GitHub,
+        Scikit-learn, Matplotlib
+      </p>
+
+      <p>
+        <strong>Co mě baví:</strong>
+        Čištění a příprava dat, explorativní analýza,
+        tvorba interaktivních reportů a objevování souvislostí
+        tam, kde je ostatní nevidí.
+      </p>
+
     </div>
   </div>
 
-  <div class="window draggable" id="projects-win"
-     style="display: none; top: 80px; left: 180px; width: 550px;">
 
-  <div class="title-bar">
-    <div class="title-bar-text">Vybrané projekty</div>
+  <!-- =========================
+       PROJEKTY
+       ========================= -->
 
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
-    </div>
-  </div>
+  <div
+    class="window draggable"
+    id="projects-win"
+    style="
+      display: none;
+      top: 80px;
+      left: 180px;
+      width: 550px;
+    "
+  >
 
-  <div class="window-body">
-
-    <div class="project-box clickable-project"
-         onclick="openWindow('project-crime-win')">
-
-      <h3>Analýza konvergence kriminality v EU (Bakalářská práce)</h3>
-
-      <p>
-        Datově-analytický projekt využívající metody strojového učení
-        pro analýzu podobnosti profilů kriminality mezi evropskými státy.
-      </p>
-
-      <p>
-        <strong>Nástroje:</strong>
-        Python, clustering, data visualization
-      </p>
-
-      <small style="color: #000080; text-decoration: underline;">
-        Klikněte pro detail a kód &raquo;
-      </small>
-    </div>
-
-    <div class="project-box clickable-project"
-         onclick="openWindow('project-ecommerce-win')">
-
-      <h3>E-commerce Data Warehouse</h3>
-
-      <p>
-        Projekt zaměřený na návrh datového skladu, práci s SQL/Pythonem
-        a tvorbu analytického dashboardu pro e-commerce data.
-      </p>
-
-      <p>
-        <strong>Nástroje:</strong>
-        SQL, Python, Git, GitHub
-      </p>
-
-      <small style="color: #000080; text-decoration: underline;">
-        Klikněte pro detail a kód &raquo;
-      </small>
-    </div>
-
-    <div class="project-box clickable-project"
-         onclick="openWindow('project-fraud-win')">
-
-      <h3>Fraud Detection</h3>
-
-      <p>
-        Projekt zaměřený na detekci podvodných finančních transakcí
-        pomocí strojového učení a webové aplikace ve Streamlitu.
-      </p>
-
-      <p>
-        <strong>Nástroje:</strong>
-        Python, Pandas, Scikit-learn, Logistic Regression, Streamlit
-      </p>
-
-      <small style="color: #000080; text-decoration: underline;">
-        Klikněte pro detail a kód &raquo;
-      </small>
-    </div>
-
-  </div>
-</div>
-  <div class="window draggable" id="skills-win" style="display: none; top: 140px; left: 260px; width: 380px;">
     <div class="title-bar">
-      <div class="title-bar-text">Dovednosti.txt - Poznámkový blok</div>
+
+      <div class="title-bar-text">
+        Vybrané projekty
+      </div>
+
       <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
         <button aria-label="Close"></button>
       </div>
+
     </div>
+
     <div class="window-body">
-      <textarea readonly rows="6" style="width: 100%; resize: none;">SQL, Python, Excel, Git, GitHub, datová analýza, bezpečnostní analytika, rešerše, projektové záměry, psaní analytických výstupů.</textarea>
+
+      <div
+        class="project-box clickable-project"
+        onclick="openWindow('project-crime-win')"
+      >
+
+        <h3>
+          Analýza konvergence kriminality v EU
+          (Bakalářská práce)
+        </h3>
+
+        <p>
+          Datově-analytický projekt využívající metody
+          strojového učení pro analýzu podobnosti profilů
+          kriminality mezi evropskými státy.
+        </p>
+
+        <p>
+          <strong>Nástroje:</strong>
+          Python, clustering, data visualization
+        </p>
+
+        <small
+          style="
+            color: #000080;
+            text-decoration: underline;
+          "
+        >
+          Klikněte pro detail a kód &raquo;
+        </small>
+
+      </div>
+
+      <div
+        class="project-box clickable-project"
+        onclick="openWindow('project-ecommerce-win')"
+      >
+
+        <h3>
+          E-commerce Data Warehouse
+        </h3>
+
+        <p>
+          Projekt zaměřený na návrh datového skladu,
+          práci s SQL/Pythonem a tvorbu analytického
+          dashboardu pro e-commerce data.
+        </p>
+
+        <p>
+          <strong>Nástroje:</strong>
+          SQL, Python, Git, GitHub
+        </p>
+
+        <small
+          style="
+            color: #000080;
+            text-decoration: underline;
+          "
+        >
+          Klikněte pro detail a kód &raquo;
+        </small>
+
+      </div>
+
+      <div
+        class="project-box clickable-project"
+        onclick="openWindow('project-fraud-win')"
+      >
+
+        <h3>
+          Fraud Detection
+        </h3>
+
+        <p>
+          Projekt zaměřený na detekci podvodných finančních
+          transakcí pomocí strojového učení a webové aplikace
+          ve Streamlitu.
+        </p>
+
+        <p>
+          <strong>Nástroje:</strong>
+          Python, Pandas, Scikit-learn,
+          Logistic Regression, Streamlit
+        </p>
+
+        <small
+          style="
+            color: #000080;
+            text-decoration: underline;
+          "
+        >
+          Klikněte pro detail a kód &raquo;
+        </small>
+
+      </div>
+
     </div>
   </div>
 
-  <div class="window draggable" id="contact-win" style="display: none; top: 200px; left: 340px; width: 350px;">
+
+  <!-- =========================
+       DOVEDNOSTI
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="skills-win"
+    style="
+      display: none;
+      top: 140px;
+      left: 260px;
+      width: 380px;
+    "
+  >
+
     <div class="title-bar">
-      <div class="title-bar-text">Kontakt</div>
+
+      <div class="title-bar-text">
+        Dovednosti.txt - Poznámkový blok
+      </div>
+
       <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
         <button aria-label="Close"></button>
       </div>
+
     </div>
+
     <div class="window-body">
-      <p><strong>E-mail:</strong> <a href="mailto:max.kubicek@seznam.cz">max.kubicek@seznam.cz</a></p>
-      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/max-kubíček" target="_blank">Profil LinkedIn</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/MaxKubic" target="_blank">github.com/maxkubic</a></p>
-      <hr>
-      <button onclick="closeWindow('contact-win')" style="float: right;">OK</button>
+
+      <textarea
+        readonly
+        rows="6"
+        style="
+          width: 100%;
+          box-sizing: border-box;
+          resize: none;
+        "
+      >SQL, Python, Excel, Git, GitHub, datová analýza, bezpečnostní analytika, rešerše, projektové záměry, psaní analytických výstupů.</textarea>
+
     </div>
   </div>
 
-  <div class="window draggable" id="project-ecommerce-win" style="display: none; top: 100px; left: 220px; width: 600px;">
+
+  <!-- =========================
+       KONTAKT
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="contact-win"
+    style="
+      display: none;
+      top: 200px;
+      left: 340px;
+      width: 350px;
+    "
+  >
+
     <div class="title-bar">
-      <div class="title-bar-text">E-commerce Data Warehouse - Detail</div>
-      <div class="title-bar-controls">
-        <button aria-label="Close"></button>
-      </div>
-    </div>
-    <div class="window-body">
-      <h3>E-commerce Data Warehouse</h3>
-      <p>Projekt zaměřený na návrh datového skladu, práci s SQL/Pythonem a tvorbu analytického dashboardu.</p>
-      
-      <p><strong>Ukázka dashboardu / výstupu:</strong></p>
-      <div class="project-box" style="text-align: center;">
-        <img src="assets/dashboard_overview.png" alt="Screenshot projektu" style="max-width: 100%; border: 1px solid #808080;">
+
+      <div class="title-bar-text">
+        Kontakt
       </div>
 
-      <p><strong>Ukázka kódu (SQL / ETL):</strong></p>
-      <div class="field-row-stacked">
-        <textarea readonly rows="6" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
--- 1. Total revenue and profit
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <p>
+          <strong>E-mail:</strong>
+          <a href="mailto:max.kubicek@seznam.cz">
+            max.kubicek@seznam.cz
+          </a>
+        </p>
+
+        <p>
+          <strong>LinkedIn:</strong>
+          <a
+            href="https://www.linkedin.com/in/max-kubíček"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Profil LinkedIn
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <a
+            href="https://github.com/MaxKubic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/MaxKubic
+          </a>
+        </p>
+
+      </div>
+
+      <div class="window-actions">
+        <button onclick="closeWindow('contact-win')">
+          OK
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       E-COMMERCE DETAIL
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="project-ecommerce-win"
+    style="
+      display: none;
+      top: 100px;
+      left: 220px;
+      width: 600px;
+    "
+  >
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        E-commerce Data Warehouse - Detail
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <h3>
+          E-commerce Data Warehouse
+        </h3>
+
+        <p>
+          Projekt zaměřený na návrh datového skladu,
+          práci s SQL/Pythonem a tvorbu analytického dashboardu.
+        </p>
+
+        <p>
+          <strong>Ukázka dashboardu / výstupu:</strong>
+        </p>
+
+        <div
+          class="project-box"
+          style="text-align: center;"
+        >
+
+          <img
+            src="assets/dashboard_overview.png"
+            alt="Screenshot projektu"
+            style="
+              max-width: 100%;
+              border: 1px solid #808080;
+            "
+          >
+
+        </div>
+
+        <p>
+          <strong>Ukázka kódu (SQL / ETL):</strong>
+        </p>
+
+        <div class="field-row-stacked">
+
+          <textarea
+            readonly
+            rows="10"
+            style="
+              width: 100%;
+              box-sizing: border-box;
+              font-family: monospace;
+              background: #000;
+              color: #00ff00;
+              resize: none;
+            "
+          >-- 1. Total revenue and profit
 SELECT
     ROUND(SUM(oi.quantity * oi.unit_price), 2) AS total_revenue,
     ROUND(SUM(oi.quantity * (oi.unit_price - p.cost)), 2) AS total_profit
 FROM order_items oi
-         JOIN products p ON oi.product_id = p.product_id
-         JOIN orders o ON oi.order_id = o.order_id
+JOIN products p
+    ON oi.product_id = p.product_id
+JOIN orders o
+    ON oi.order_id = o.order_id
 WHERE o.status != 'cancelled';
 
 -- 2. Monthly revenue
@@ -205,195 +512,285 @@ SELECT
     DATE_FORMAT(o.order_date, '%Y-%m') AS month,
     ROUND(SUM(oi.quantity * oi.unit_price), 2) AS revenue
 FROM orders o
-         JOIN order_items oi ON o.order_id = oi.order_id
+JOIN order_items oi
+    ON o.order_id = oi.order_id
 WHERE o.status != 'cancelled'
 GROUP BY DATE_FORMAT(o.order_date, '%Y-%m')
-ORDER BY month;
+ORDER BY month;</textarea>
 
--- 3. Revenue and profit by category
-SELECT
-    p.category,
-    ROUND(SUM(oi.quantity * oi.unit_price), 2) AS revenue,
-    ROUND(SUM(oi.quantity * (oi.unit_price - p.cost)), 2) AS profit
-FROM order_items oi
-         JOIN products p ON oi.product_id = p.product_id
-         JOIN orders o ON oi.order_id = o.order_id
-WHERE o.status != 'cancelled'
-GROUP BY p.category
-ORDER BY profit DESC;
+        </div>
 
--- 4. Top 10 customers by total spending
-SELECT
-    c.customer_id,
-    c.first_name,
-    c.last_name,
-    c.city,
-    ROUND(SUM(oi.quantity * oi.unit_price), 2) AS total_spent
-FROM customers c
-         JOIN orders o ON c.customer_id = o.customer_id
-         JOIN order_items oi ON o.order_id = oi.order_id
-WHERE o.status != 'cancelled'
-GROUP BY c.customer_id, c.first_name, c.last_name, c.city
-ORDER BY total_spent DESC
-LIMIT 10;
-
--- 5. Return rate by product category
-SELECT
-    p.category,
-    COUNT(DISTINCT r.return_id) AS total_returns,
-    COUNT(DISTINCT oi.order_item_id) AS total_sold_items,
-    ROUND(
-            COUNT(DISTINCT r.return_id) * 100.0 / COUNT(DISTINCT oi.order_item_id),
-            2
-    ) AS return_rate_percent
-FROM products p
-         JOIN order_items oi ON p.product_id = oi.product_id
-         LEFT JOIN returns r ON p.product_id = r.product_id
-GROUP BY p.category
-ORDER BY return_rate_percent DESC;
-        </textarea>
       </div>
 
-      <hr>
-      <button onclick="closeWindow('project-ecommerce-win')" style="float: right;">Zavřít</button>
-    </div>
-  </div>
-<div class="window draggable" id="project-crime-win" style="display: none; top: 120px; left: 240px; width: 620px;">
-  <div class="title-bar">
-    <div class="title-bar-text">Analýza konvergence kriminality v EU - Detail</div>
-    <div class="title-bar-controls">
-      <button aria-label="Close"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <h3>Analýza konvergence kriminality v EU</h3>
-    <p>Datově-analytický projekt zkoumající podobnosti a vývojové trendy kriminality napříč evropskými státy pomocí pokročilých metod výpočetní statistiky a strojového učení.</p>
-    
-    <p><strong>Ukázka vizualizace / shlukové analýzy:</strong></p>
-    <div class="project-box" style="text-align: center;">
-      <img src="assets/pca_clusters_improved.png" alt="Ukázka clusteringu kriminality" style="max-width: 100%; border: 1px solid #808080;">
-    </div>
+      <div class="window-actions">
+        <button onclick="closeWindow('project-ecommerce-win')">
+          Zavřít
+        </button>
+      </div>
 
-    <p><strong>Ukázka kódu (Data Pipeline & Clustering):</strong></p>
-    <div class="field-row-stacked">
-      <textarea readonly rows="10" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
-from sklearn.cluster import KMeans
-
-# 1. Příprava a standardizace datových ukazatelů kriminality
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(df[crime_features])
-
-# 2. Redukce dimenzionality pro zachování hlavní variability (PCA)
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X_scaled)
-
-# 3. Segmentace států do homogenních shluků (K-Means)
-kmeans = KMeans(n_clusters=4, random_state=42)
-df['cluster'] = kmeans.fit_predict(X_pca)
-
-# Výpočet průměrných hodnot parametrů pro jednotlivé shluky
-cluster_profile = df.groupby('cluster')[crime_features].mean()
-      </textarea>
-    </div>
-
-    <hr>
-    <button onclick="closeWindow('project-crime-win')" style="float: right;">Zavřít</button>
-  </div>
-</div>
-<div class="window draggable"
-     id="project-fraud-win"
-     style="display: none; top: 60px; left: 120px; width: 1050px; max-height: 820px;">
-
-  <div class="title-bar">
-    <div class="title-bar-text">Fraud Detection - Detail</div>
-
-    <div class="title-bar-controls">
-      <button aria-label="Close"></button>
     </div>
   </div>
 
-  <div class="window-body"
-       style="max-height: 760px; overflow-y: auto;">
 
-    <h3>Fraud Detection</h3>
+  <!-- =========================
+       CRIME DETAIL
+       ========================= -->
 
-    <div style="
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
-      gap: 16px;
-      align-items: start;
-    ">
+  <div
+    class="window draggable"
+    id="project-crime-win"
+    style="
+      display: none;
+      top: 120px;
+      left: 240px;
+      width: 620px;
+    "
+  >
 
-      <!-- LEVÝ SLOUPEC -->
-      <div>
-        <p><strong>Ukázka Streamlit aplikace:</strong></p>
+    <div class="title-bar">
 
-        <div class="project-box"
-             style="text-align: center; padding: 8px;">
+      <div class="title-bar-text">
+        Analýza konvergence kriminality v EU - Detail
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <h3>
+          Analýza konvergence kriminality v EU
+        </h3>
+
+        <p>
+          Datově-analytický projekt zkoumající podobnosti
+          a vývojové trendy kriminality napříč evropskými státy
+          pomocí pokročilých metod výpočetní statistiky
+          a strojového učení.
+        </p>
+
+        <p>
+          <strong>
+            Ukázka vizualizace / shlukové analýzy:
+          </strong>
+        </p>
+
+        <div
+          class="project-box"
+          style="text-align: center;"
+        >
 
           <img
-            src="assets/fraud_detection_app.png"
-            alt="Ukázka Streamlit aplikace pro detekci podvodných transakcí"
+            src="assets/pca_clusters_improved.png"
+            alt="Ukázka clusteringu kriminality"
             style="
-              width: 100%;
-              max-height: 610px;
-              object-fit: contain;
+              max-width: 100%;
               border: 1px solid #808080;
-              display: block;
-            ">
+            "
+          >
+
         </div>
-      </div>
-
-      <!-- PRAVÝ SLOUPEC -->
-      <div>
-        <p>
-          Projekt zaměřený na detekci podvodných finančních transakcí
-          pomocí průzkumné analýzy dat, předzpracování, logistické regrese
-          a webové aplikace vytvořené ve Streamlitu.
-        </p>
 
         <p>
-          Model vyhodnocuje typ transakce, její částku a změny zůstatků
-          na účtu odesílatele a příjemce.
+          <strong>
+            Ukázka kódu (Data Pipeline & Clustering):
+          </strong>
         </p>
-
-        <p>
-          Pro zpracování dat je použit Scikit-learn Pipeline kombinující
-          standardizaci numerických proměnných, One-Hot Encoding
-          a logistickou regresi.
-        </p>
-
-        <p><strong>Použité technologie:</strong></p>
-
-        <ul style="margin-top: 4px;">
-          <li>Python</li>
-          <li>Pandas a NumPy</li>
-          <li>Matplotlib a Seaborn</li>
-          <li>Scikit-learn</li>
-          <li>Joblib</li>
-          <li>Streamlit</li>
-        </ul>
-
-        <p><strong>Ukázka Machine Learning Pipeline:</strong></p>
 
         <div class="field-row-stacked">
+
           <textarea
             readonly
-            rows="18"
+            rows="10"
             style="
               width: 100%;
               box-sizing: border-box;
               font-family: monospace;
-              font-size: 12px;
               background: #000;
               color: #00ff00;
               resize: none;
-            ">
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
+            "
+          >import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.cluster import KMeans
+
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(df[crime_features])
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X_scaled)
+
+kmeans = KMeans(
+    n_clusters=4,
+    random_state=42
+)
+
+df["cluster"] = kmeans.fit_predict(X_pca)
+
+cluster_profile = (
+    df.groupby("cluster")[crime_features].mean()
+)</textarea>
+
+        </div>
+
+      </div>
+
+      <div class="window-actions">
+        <button onclick="closeWindow('project-crime-win')">
+          Zavřít
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       FRAUD DETECTION DETAIL
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="project-fraud-win"
+    style="
+      display: none;
+      top: 60px;
+      left: 120px;
+      width: 1050px;
+      max-height: 820px;
+    "
+  >
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        Fraud Detection - Detail
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <h3>
+          Fraud Detection
+        </h3>
+
+        <div
+          class="fraud-layout"
+          style="
+            display: grid;
+            grid-template-columns:
+              minmax(0, 1.25fr)
+              minmax(320px, 0.75fr);
+            gap: 16px;
+            align-items: start;
+          "
+        >
+
+          <div>
+
+            <p>
+              <strong>
+                Ukázka Streamlit aplikace:
+              </strong>
+            </p>
+
+            <div
+              class="project-box"
+              style="
+                text-align: center;
+                padding: 8px;
+              "
+            >
+
+              <img
+                src="assets/fraud_detection_app.png"
+                alt="Ukázka Streamlit aplikace pro detekci podvodných transakcí"
+                style="
+                  width: 100%;
+                  max-height: 610px;
+                  object-fit: contain;
+                  border: 1px solid #808080;
+                  display: block;
+                "
+              >
+
+            </div>
+
+          </div>
+
+          <div>
+
+            <p>
+              Projekt zaměřený na detekci podvodných
+              finančních transakcí pomocí průzkumné analýzy dat,
+              předzpracování, logistické regrese a webové aplikace
+              vytvořené ve Streamlitu.
+            </p>
+
+            <p>
+              Model vyhodnocuje typ transakce, její částku
+              a změny zůstatků na účtu odesílatele a příjemce.
+            </p>
+
+            <p>
+              Pro zpracování dat je použit Scikit-learn Pipeline
+              kombinující standardizaci numerických proměnných,
+              One-Hot Encoding a logistickou regresi.
+            </p>
+
+            <p>
+              <strong>Použité technologie:</strong>
+            </p>
+
+            <ul>
+              <li>Python</li>
+              <li>Pandas a NumPy</li>
+              <li>Matplotlib a Seaborn</li>
+              <li>Scikit-learn</li>
+              <li>Joblib</li>
+              <li>Streamlit</li>
+            </ul>
+
+            <p>
+              <strong>
+                Ukázka Machine Learning Pipeline:
+              </strong>
+            </p>
+
+            <div class="field-row-stacked">
+
+              <textarea
+                readonly
+                rows="18"
+                style="
+                  width: 100%;
+                  box-sizing: border-box;
+                  font-family: monospace;
+                  font-size: 12px;
+                  background: #000;
+                  color: #00ff00;
+                  resize: none;
+                "
+              >from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
@@ -408,216 +805,428 @@ numeric = [
 ]
 
 preprocessor = ColumnTransformer([
-    ("num", StandardScaler(), numeric),
-    ("cat", OneHotEncoder(
-        drop="first",
-        handle_unknown="ignore"
-    ), categorical)
+    (
+        "num",
+        StandardScaler(),
+        numeric
+    ),
+    (
+        "cat",
+        OneHotEncoder(
+            drop="first",
+            handle_unknown="ignore"
+        ),
+        categorical
+    )
 ])
 
 pipeline = Pipeline([
     ("prep", preprocessor),
-    ("clf", LogisticRegression(
-        class_weight="balanced",
-        max_iter=1000
-    ))
+    (
+        "clf",
+        LogisticRegression(
+            class_weight="balanced",
+            max_iter=1000
+        )
+    )
 ])
 
-pipeline.fit(X_train, y_train)
-          </textarea>
+pipeline.fit(X_train, y_train)</textarea>
+
+            </div>
+
+            <p>
+              <strong>Dataset:</strong>
+              <br>
+
+              <a
+                href="https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fraud Detection Dataset na Kaggle
+              </a>
+            </p>
+
+            <p>
+              <strong>GitHub:</strong>
+              <br>
+
+              <a
+                href="https://github.com/MaxKubic/Fraud_Detection"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Zobrazit repozitář
+              </a>
+            </p>
+
+          </div>
+
         </div>
 
-        <p>
-          <strong>Dataset:</strong><br>
-          <a
-            href="https://www.kaggle.com/datasets/amanalisiddiqui/fraud-detection-dataset?resource=download"
-            target="_blank"
-            rel="noopener noreferrer">
-            Fraud Detection Dataset na Kaggle
-          </a>
-        </p>
+      </div>
 
-        <p>
-          <strong>GitHub:</strong><br>
-          <a
-            href="https://github.com/MaxKubic/Fraud_Detection"
-            target="_blank"
-            rel="noopener noreferrer">
-            Zobrazit repozitář
-          </a>
-        </p>
+      <div class="window-actions">
+        <button onclick="closeWindow('project-fraud-win')">
+          Zavřít
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       KOŠ
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="recycle-win"
+    style="
+      display: none;
+      top: 150px;
+      left: 300px;
+      width: 420px;
+    "
+  >
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        Koš - Obsah
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
       </div>
 
     </div>
 
-    <hr>
+    <div class="window-body">
 
-    <button
-      onclick="closeWindow('project-fraud-win')"
-      style="float: right;">
-      Zavřít
-    </button>
+      <div class="window-content">
 
-    <div style="clear: both;"></div>
-  </div>
-</div>
-  
-  <div class="window draggable" id="recycle-win" style="display: none; top: 150px; left: 300px; width: 420px;">
-  <div class="title-bar">
-    <div class="title-bar-text">Koš - Obsah</div>
-    <div class="title-bar-controls">
-      <button aria-label="Close"></button>
-    </div>
-  </div>
-  <div class="window-body">
-    <p>Položky určené k trvalému smazání:</p>
-    
-    <div class="project-box clickable-project" onclick="openWindow('first-project-win')" style="display: flex; align-items: center; gap: 12px; padding: 8px;">
-      <img src="assets/w98_keys.ico" alt="Soubor" style="width: 32px; height: 32px; image-rendering: pixelated;">
-      <div>
-        <strong style="display: block;">Můj první projekt z prváku.py</strong>
-        <small style="color: #666;">Smazáno: Před 3 lety | Velikost: 1.2 KB</small>
+        <p>
+          Položky určené k trvalému smazání:
+        </p>
+
+        <div
+          class="project-box clickable-project"
+          onclick="openWindow('first-project-win')"
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px;
+          "
+        >
+
+          <img
+            src="assets/w98_keys.ico"
+            alt="Soubor"
+            style="
+              width: 32px;
+              height: 32px;
+              image-rendering: pixelated;
+            "
+          >
+
+          <div>
+
+            <strong style="display: block;">
+              Můj první projekt z prváku.py
+            </strong>
+
+            <small style="color: #666;">
+              Smazáno: Před 3 lety | Velikost: 1.2 KB
+            </small>
+
+          </div>
+
+        </div>
+
       </div>
-    </div>
 
-    <hr>
-    <button onclick="closeWindow('recycle-win')" style="float: right;">Vyprázdnit koš</button>
-  </div>
-</div>
+      <div class="window-actions">
+        <button onclick="closeWindow('recycle-win')">
+          Vyprázdnit koš
+        </button>
+      </div>
 
-<div class="window draggable" id="first-project-win" style="display: none; top: 180px; left: 340px; width: 450px;">
-  <div class="title-bar">
-    <div class="title-bar-text">Můj první projekt z prváku.py</div>
-    <div class="title-bar-controls">
-      <button aria-label="Close"></button>
     </div>
   </div>
-  <div class="window-body">
-    <h3>Hello World & Kalkulačka (2021)</h3>
-    <p><i>„Můj úplně první skript na VŠE. Každý nějak začínal – 50 podmínek IF a nulové ošetření chyb. Naštěstí dnes už píšu kód trochu jinak.“</i></p>
-    
-    <div class="field-row-stacked">
-      <textarea readonly rows="7" style="width: 100%; font-family: monospace; background: #000; color: #00ff00; resize: none;">
-# Můj historicky první Python kód
+
+
+  <!-- =========================
+       PRVNÍ PROJEKT
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="first-project-win"
+    style="
+      display: none;
+      top: 180px;
+      left: 340px;
+      width: 450px;
+    "
+  >
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        Můj první projekt z prváku.py
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <h3>
+          Hello World & Kalkulačka (2021)
+        </h3>
+
+        <p>
+          <i>
+            „Můj úplně první skript na VŠE.
+            Každý nějak začínal – 50 podmínek IF
+            a nulové ošetření chyb. Naštěstí dnes
+            už píšu kód trochu jinak.“
+          </i>
+        </p>
+
+        <div class="field-row-stacked">
+
+          <textarea
+            readonly
+            rows="7"
+            style="
+              width: 100%;
+              box-sizing: border-box;
+              font-family: monospace;
+              background: #000;
+              color: #00ff00;
+              resize: none;
+            "
+          ># Můj historicky první Python kód
 print("Vítejte v mé kalkulačce!")
+
 a = int(input("Zadej číslo 1: "))
 b = int(input("Zadej číslo 2: "))
 
 if op == "+":
     print("Výsledek:", a + b)
-# ... dalších 40 řádků bez try-except bloku :-)
-      </textarea>
-    </div>
 
-    <hr>
-    <button onclick="closeWindow('first-project-win')" style="float: right;">Obnovit ze smazaných</button>
-  </div>
-</div>
-  <div
-  class="window draggable"
-  id="cv-win"
-  style="
-    display: none;
-    top: 40px;
-    left: 160px;
-    width: 850px;
-    height: 720px;
-    max-width: calc(100vw - 40px);
-    max-height: calc(100vh - 70px);
-  "
->
-  <div class="title-bar">
-    <div class="title-bar-text">
-      Životopis.pdf - Adobe Acrobat Reader
-    </div>
+# ... dalších 40 řádků bez try-except bloku :-)</textarea>
 
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+        </div>
+
+      </div>
+
+      <div class="window-actions">
+        <button onclick="closeWindow('first-project-win')">
+          Obnovit ze smazaných
+        </button>
+      </div>
+
     </div>
   </div>
 
+
+  <!-- =========================
+       ŽIVOTOPIS
+       ========================= -->
+
   <div
-    class="window-body"
+    class="window draggable"
+    id="cv-win"
     style="
-      height: calc(100% - 35px);
-      display: flex;
-      flex-direction: column;
-      box-sizing: border-box;
+      display: none;
+      top: 40px;
+      left: 160px;
+      width: 850px;
+      height: 720px;
+      max-width: calc(100vw - 40px);
+      max-height: calc(100vh - 70px);
     "
   >
-    <div
-      style="
-        flex: 1;
-        min-height: 0;
-        background: #808080;
-        border: 2px inset #dfdfdf;
-        padding: 4px;
-      "
-    >
-      <iframe
-        src="assets/CV_Max_Kubicek.pdf"
-        title="Životopis Max Kubíček"
-        style="
-          width: 100%;
-          height: 100%;
-          border: none;
-          background: white;
-          display: block;
-        "
-      ></iframe>
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        Životopis.pdf - Adobe Acrobat Reader
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
     </div>
 
     <div
+      class="window-body"
       style="
+        height: calc(100% - 35px);
         display: flex;
-        justify-content: flex-end;
-        gap: 8px;
-        margin-top: 8px;
+        flex-direction: column;
+        box-sizing: border-box;
       "
     >
-      <a
-        href="assets/CV_Max_Kubicek.pdf"
-        download="CV_Max_Kubicek.pdf"
-        style="text-decoration: none;"
-      >
-        <button type="button">
-          Stáhnout CV
-        </button>
-      </a>
 
-      <button
-        type="button"
-        onclick="closeWindow('cv-win')"
+      <div
+        class="cv-preview window-content"
+        style="
+          flex: 1;
+          min-height: 0;
+          background: #808080;
+          border: 2px inset #dfdfdf;
+          padding: 4px;
+        "
       >
-        Zavřít
-      </button>
+
+        <iframe
+          src="assets/CV_Max_Kubicek.pdf"
+          title="Životopis Max Kubíček"
+          style="
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            display: block;
+          "
+        ></iframe>
+
+      </div>
+
+      <div class="window-actions cv-actions">
+
+        <a
+          href="assets/CV_Max_Kubicek.pdf"
+          download="CV_Max_Kubicek.pdf"
+          style="text-decoration: none;"
+        >
+          <button type="button">
+            Stáhnout CV
+          </button>
+        </a>
+
+        <button
+          type="button"
+          onclick="closeWindow('cv-win')"
+        >
+          Zavřít
+        </button>
+
+      </div>
+
     </div>
   </div>
-</div>
+
+
+  <!-- =========================
+       SPODNÍ LIŠTA
+       ========================= -->
+
   <div class="taskbar">
-    <button class="start-btn" onclick="toggleStartMenu()">
-      <img src="assets/w98_windows.ico" width="16" alt="Start">
+
+    <button
+      class="start-btn"
+      onclick="toggleStartMenu()"
+    >
+      <img
+        src="assets/w98_windows.ico"
+        width="16"
+        alt="Start"
+      >
+
       <strong>Start</strong>
     </button>
 
-    <div class="taskbar-windows" id="taskbarWindows"></div>
-    
-    <div class="start-menu" id="startMenu">
-      <div class="start-sidebar"><span>Windows</span>95</div>
-     <div class="start-items">
-        <div class="start-item" onclick="openWindow('about-win')">O mně</div>
-        <div class="start-item" onclick="openWindow('projects-win')">Projekty</div>
-        <div class="start-item" onclick="openWindow('skills-win')">Dovednosti</div>
-        <div class="start-item" onclick="openWindow('contact-win')">Kontakt</div>
-        <hr style="margin: 2px 0; border-style: inset;">
-        <div class="start-item" onclick="openWindow('cv-win')">📄 Životopis (PDF)</div>
+    <div
+      class="taskbar-windows"
+      id="taskbarWindows"
+    ></div>
+
+    <div
+      class="start-menu"
+      id="startMenu"
+    >
+
+      <div class="start-sidebar">
+        <span>Windows</span>95
+      </div>
+
+      <div class="start-items">
+
+        <div
+          class="start-item"
+          onclick="openWindow('about-win')"
+        >
+          O mně
+        </div>
+
+        <div
+          class="start-item"
+          onclick="openWindow('projects-win')"
+        >
+          Projekty
+        </div>
+
+        <div
+          class="start-item"
+          onclick="openWindow('skills-win')"
+        >
+          Dovednosti
+        </div>
+
+        <div
+          class="start-item"
+          onclick="openWindow('contact-win')"
+        >
+          Kontakt
+        </div>
+
+        <hr
+          style="
+            margin: 2px 0;
+            border-style: inset;
+          "
+        >
+
+        <div
+          class="start-item"
+          onclick="openWindow('cv-win')"
+        >
+          📄 Životopis (PDF)
+        </div>
+
       </div>
     </div>
 
-    <div class="taskbar-time" id="clock">12:00</div>
+    <div
+      class="taskbar-time"
+      id="clock"
+    >
+      12:00
+    </div>
+
   </div>
-<script src="script.js"></script>
- </body>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
