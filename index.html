@@ -1050,91 +1050,95 @@ if op == "+":
        ========================= -->
 
   <div
-    class="window draggable"
-    id="cv-win"
-    style="
-      display: none;
-      top: 40px;
-      left: 160px;
-      width: 850px;
-      height: 720px;
-      max-width: calc(100vw - 40px);
-      max-height: calc(100vh - 70px);
-    "
-  >
+  class="window draggable"
+  id="cv-win"
+  style="
+    display: none;
+    top: 40px;
+    left: 160px;
+    width: 850px;
+    height: 720px;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 70px);
+  "
+>
+  <div class="title-bar">
 
-    <div class="title-bar">
+    <div class="title-bar-text">
+      Životopis.pdf - Adobe Acrobat Reader
+    </div>
 
-      <div class="title-bar-text">
-        Životopis.pdf - Adobe Acrobat Reader
-      </div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
 
-      <div class="title-bar-controls">
-        <button aria-label="Minimize"></button>
-        <button aria-label="Maximize"></button>
-        <button aria-label="Close"></button>
-      </div>
+  </div>
+
+  <div class="window-body cv-window-body">
+
+    <!-- Náhled PDF pro počítače -->
+    <div class="cv-preview window-content">
+
+      <iframe
+        src="assets/CV_Max_Kubicek.pdf"
+        title="Životopis Max Kubíček">
+      </iframe>
 
     </div>
 
-    <div
-      class="window-body"
-      style="
-        height: calc(100% - 35px);
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-      "
-    >
+    <!-- Mobilní náhrada za iframe -->
+    <div class="cv-mobile-placeholder">
 
-      <div
-        class="cv-preview window-content"
-        style="
-          flex: 1;
-          min-height: 0;
-          background: #808080;
-          border: 2px inset #dfdfdf;
-          padding: 4px;
-        "
+      <img
+        src="assets/w2k_text_document.ico"
+        alt="PDF dokument"
       >
 
-        <iframe
-          src="assets/CV_Max_Kubicek.pdf"
-          title="Životopis Max Kubíček"
-          style="
-            width: 100%;
-            height: 100%;
-            border: none;
-            background: white;
-            display: block;
-          "
-        ></iframe>
+      <strong>
+        Životopis Max Kubíček
+      </strong>
 
-      </div>
-
-      <div class="window-actions cv-actions">
-
-        <a
-          href="assets/CV_Max_Kubicek.pdf"
-          download="CV_Max_Kubicek.pdf"
-          style="text-decoration: none;"
-        >
-          <button type="button">
-            Stáhnout CV
-          </button>
-        </a>
-
-        <button
-          type="button"
-          onclick="closeWindow('cv-win')"
-        >
-          Zavřít
-        </button>
-
-      </div>
+      <p>
+        Na telefonu můžeš životopis otevřít jako PDF
+        nebo si jej stáhnout do zařízení.
+      </p>
 
     </div>
+
+    <div class="window-actions cv-actions">
+
+      <a
+        href="assets/CV_Max_Kubicek.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button type="button">
+          Otevřít CV
+        </button>
+      </a>
+
+      <a
+        href="assets/CV_Max_Kubicek.pdf"
+        download="CV_Max_Kubicek.pdf"
+      >
+        <button type="button">
+          Stáhnout CV
+        </button>
+      </a>
+
+      <button
+        type="button"
+        onclick="closeWindow('cv-win')"
+      >
+        Zavřít
+      </button>
+
+    </div>
+
   </div>
+</div>
 
 
   <!-- =========================
