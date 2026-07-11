@@ -777,3 +777,114 @@ body {
     font-size: 13px;
   }
 }
+
+/* ==========================================
+   OPRAVA CV – DESKTOP VS. MOBIL
+   Tento blok musí být úplně poslední
+   ========================================== */
+
+/* POČÍTAČ */
+@media screen and (min-width: 769px) {
+
+  #cv-win .cv-window-body {
+    display: flex !important;
+    flex-direction: column !important;
+
+    height: calc(100% - 30px) !important;
+    min-height: 0 !important;
+
+    padding: 8px !important;
+    box-sizing: border-box !important;
+
+    overflow: hidden !important;
+  }
+
+  /* Na PC zobrazit PDF */
+  #cv-win .cv-preview {
+    display: block !important;
+    flex: 1 1 auto !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 4px !important;
+    box-sizing: border-box !important;
+
+    background: #808080 !important;
+    border: 2px inset #dfdfdf !important;
+
+    overflow: hidden !important;
+  }
+
+  #cv-win .cv-preview iframe {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    border: none !important;
+    background: white !important;
+  }
+
+  /* Mobilní panel musí být na PC úplně skrytý */
+  #cv-win .cv-mobile-placeholder {
+    display: none !important;
+  }
+
+  #cv-win .window-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 8px !important;
+
+    flex: 0 0 auto !important;
+
+    width: 100% !important;
+    min-height: 36px !important;
+
+    margin-top: 8px !important;
+    padding-top: 8px !important;
+
+    box-sizing: border-box !important;
+
+    background: #c0c0c0 !important;
+    border-top: 1px solid #808080 !important;
+  }
+}
+
+
+/* TELEFON */
+@media screen and (max-width: 768px) {
+
+  /* Na mobilu PDF iframe skrýt */
+  #cv-win .cv-preview {
+    display: none !important;
+  }
+
+  /* Na mobilu zobrazit náhradní panel */
+  #cv-win .cv-mobile-placeholder {
+    display: flex !important;
+
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 20px !important;
+    box-sizing: border-box !important;
+
+    text-align: center !important;
+
+    background: white !important;
+    border: 2px inset #dfdfdf !important;
+
+    overflow-y: auto !important;
+  }
+}
