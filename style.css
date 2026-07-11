@@ -434,3 +434,53 @@ body {
     overflow-wrap: anywhere;
   }
 }
+
+/* Všechna mobilní okna */
+@media screen and (max-width: 768px) {
+
+  .window > .window-body {
+    height: calc(100% - 26px) !important;
+    max-height: none !important;
+    box-sizing: border-box;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-bottom: 12px;
+  }
+
+  /* Poslední oddělovací čára před tlačítkem */
+  .window-body > hr:last-of-type {
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+
+  /* Poslední tlačítko v každém okně */
+  .window-body > button:last-of-type {
+    flex-shrink: 0;
+    float: none !important;
+    align-self: flex-end;
+
+    position: sticky;
+    bottom: 0;
+
+    margin-top: 6px;
+    z-index: 5;
+  }
+
+  /* Spodní ovládací část */
+  .window-actions,
+  .cv-actions {
+    flex-shrink: 0 !important;
+
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+
+    background: #c0c0c0;
+    padding: 6px 0 2px;
+  }
+}
