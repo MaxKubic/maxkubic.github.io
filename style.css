@@ -1,23 +1,39 @@
-/* Základní pozadí Windows 95 (Teal) */
+/* ==========================================
+   ZÁKLADNÍ NASTAVENÍ STRÁNKY
+   ========================================== */
+
+html,
 body {
-  background-image: url('assets/wallpaper.jpg');
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: url("assets/wallpaper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
+
   overflow: hidden;
+
   font-family: "Pixelated MS Sans Serif", Arial, sans-serif;
   user-select: none;
 }
 
-/* Ikony na ploše */
+
+/* ==========================================
+   IKONY NA PLOŠE
+   ========================================== */
+
 .desktop {
   padding: 20px;
+
   display: flex;
   flex-direction: column;
   gap: 20px;
+
   width: max-content;
 }
 
@@ -25,8 +41,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 70px;
+
   cursor: pointer;
+
   color: white;
   text-align: center;
   font-size: 12px;
@@ -43,50 +62,116 @@ body {
   background-color: #000080;
 }
 
-/* Styly pro okna */
+
+/* ==========================================
+   OKNA
+   ========================================== */
+
 .window {
   position: absolute;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.window-body {
+  box-sizing: border-box;
+}
+
+.window-content {
+  min-width: 0;
 }
 
 .subtitle {
+  margin-top: -5px;
+
   font-weight: bold;
   color: #555;
-  margin-top: -5px;
 }
 
+
+/* ==========================================
+   SPODNÍ OVLÁDACÍ TLAČÍTKA OKEN
+   ========================================== */
+
+.window-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  margin-top: 8px;
+  padding-top: 8px;
+
+  border-top: 1px solid #808080;
+  background: #c0c0c0;
+}
+
+.window-actions a {
+  text-decoration: none;
+}
+
+
+/* ==========================================
+   PROJEKTOVÉ BOXY
+   ========================================== */
+
 .project-box {
+  margin-bottom: 12px;
+  padding: 10px;
+
   background: #fff;
   border: 2px inset #dfdfdf;
-  padding: 10px;
-  margin-bottom: 12px;
 }
 
 .project-box h3 {
   margin-top: 0;
   margin-bottom: 5px;
+
   font-size: 14px;
 }
 
-/* Dolní lišta (Taskbar) */
+.clickable-project {
+  cursor: pointer;
+
+  transition:
+    background-color 0.1s ease,
+    border-color 0.1s ease;
+}
+
+.clickable-project:hover {
+  background-color: #f5f5f5;
+  border-color: #000080;
+}
+
+.clickable-project:active {
+  background-color: #e0e0e0;
+}
+
+
+/* ==========================================
+   DOLNÍ LIŠTA
+   ========================================== */
+
 .taskbar {
   position: fixed;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
 
-  height: 30px;
-  box-sizing: border-box;
-
-  background: #c0c0c0;
-  border-top: 2px solid #fff;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
   gap: 4px;
 
+  height: 30px;
   padding: 2px 4px;
-  z-index: 1000;
+
+  box-sizing: border-box;
+
+  background: #c0c0c0;
+  border-top: 2px solid #fff;
 }
 
 .start-btn {
@@ -95,26 +180,31 @@ body {
   gap: 4px;
 
   flex-shrink: 0;
+
   height: 24px;
 
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Prostor pro otevřená a minimalizovaná okna */
-.taskbar-windows {
-  flex: 1;
-  min-width: 0;
-  height: 24px;
 
+/* ==========================================
+   TLAČÍTKA OTEVŘENÝCH OKEN V TASKBARU
+   ========================================== */
+
+.taskbar-windows {
   display: flex;
   align-items: center;
   gap: 3px;
 
+  flex: 1;
+
+  min-width: 0;
+  height: 24px;
+
   overflow: hidden;
 }
 
-/* Tlačítko jednoho okna v taskbaru */
 .taskbar-window-button {
   flex: 1 1 140px;
 
@@ -125,14 +215,14 @@ body {
   padding: 2px 8px;
 
   overflow: hidden;
+
   white-space: nowrap;
   text-overflow: ellipsis;
-
   text-align: left;
+
   cursor: pointer;
 }
 
-/* Aktivní okno */
 .taskbar-window-button.active {
   font-weight: bold;
 
@@ -143,42 +233,59 @@ body {
     inset 2px 2px #808080;
 }
 
-/* Minimalizované okno */
 .taskbar-window-button.minimized {
   font-weight: normal;
 }
 
-/* Hodiny */
+
+/* ==========================================
+   HODINY
+   ========================================== */
+
 .taskbar-time {
   flex-shrink: 0;
 
-  border: 2px inset #fff;
   padding: 2px 8px;
 
   font-size: 12px;
+
   background: #c0c0c0;
+  border: 2px inset #fff;
 }
 
-/* Nabídka Start */
+
+/* ==========================================
+   NABÍDKA START
+   ========================================== */
+
 .start-menu {
   display: none;
+
   position: absolute;
   bottom: 30px;
   left: 2px;
+
   width: 180px;
+
+  flex-direction: row;
+
   background: #c0c0c0;
+
   border: 2px solid;
   border-color: #fff #808080 #808080 #fff;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-  flex-direction: row;
+
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
 .start-sidebar {
+  padding: 8px 4px;
+
   background: #808080;
   color: #c0c0c0;
+
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  padding: 8px 4px;
+
   font-weight: bold;
   font-size: 16px;
   letter-spacing: 1px;
@@ -194,7 +301,9 @@ body {
 
 .start-item {
   padding: 8px 12px;
+
   font-size: 12px;
+
   cursor: pointer;
 }
 
@@ -203,48 +312,43 @@ body {
   color: white;
 }
 
-/* Výchozí stav okna - skryté */
+
+/* ==========================================
+   STARŠÍ MODÁLNÍ OKNO
+   ========================================== */
+
 .modal-window {
-  display: none; 
+  display: none;
+
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
+
   padding: 20px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+
+  transform: translate(-50%, -50%);
+
+  background-color: white;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Třída pro zobrazení okna */
 .modal-window.is-open {
   display: block;
 }
-/* Efekt pro klikací boxy projektů */
-.clickable-project {
-  cursor: pointer; /* Změní kurzor na ručičku po najetí */
-  transition: background-color 0.1s ease, border-color 0.1s ease;
-}
 
-/* Změna vzhledu při najetí myší (hover) */
-.clickable-project:hover {
-  background-color: #f5f5f5; /* Jemné zašednutí pozadí */
-  border-color: #000080;     /* Ztmavnutí rámečku do tmavě modré */
-}
-
-/* Kliknutí (stisknutí tlačítka myši) */
-.clickable-project:active {
-  background-color: #e0e0e0;
-}
 
 /* ==========================================
    MOBILNÍ VERZE
    ========================================== */
+
 @media screen and (max-width: 768px) {
 
   html,
   body {
     width: 100%;
     height: 100%;
+
     overflow: hidden;
   }
 
@@ -253,25 +357,31 @@ body {
     background-attachment: fixed;
   }
 
-  /* Plocha s ikonami */
+
+  /* ========================================
+     IKONY NA MOBILU
+     ======================================== */
+
   .desktop {
-    width: 100%;
-    height: calc(100vh - 34px);
-    box-sizing: border-box;
-
-    padding: 14px 10px;
-
     display: grid;
     grid-template-columns: repeat(3, 78px);
     grid-auto-rows: 80px;
     align-content: start;
     justify-content: start;
 
+    width: 100%;
+    height: calc(100dvh - 34px);
+
+    padding: 14px 10px;
+
+    box-sizing: border-box;
+
     gap: 12px 6px;
   }
 
   .desktop-icon {
     width: 78px;
+
     font-size: 11px;
   }
 
@@ -280,38 +390,39 @@ body {
     height: 34px;
   }
 
-  /* Všechna otevřená okna na mobilu */
+
+  /* ========================================
+     OKNA NA MOBILU
+     ======================================== */
+
   .window {
     position: fixed !important;
 
-    top: 5px !important;
+    top: max(5px, env(safe-area-inset-top)) !important;
     left: 5px !important;
 
     width: calc(100vw - 10px) !important;
-    height: calc(100vh - 42px) !important;
+
+    height: calc(
+      100dvh -
+      42px -
+      env(safe-area-inset-top) -
+      env(safe-area-inset-bottom)
+    ) !important;
 
     max-width: none !important;
     max-height: none !important;
 
     box-sizing: border-box;
+
     overflow: hidden;
   }
 
-  /* Obsah okna */
-  .window > .window-body {
-    height: calc(100% - 30px) !important;
-    max-height: none !important;
+  .window > .title-bar {
+    flex-shrink: 0;
 
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: auto !important;
-
-    padding: 8px;
-  }
-
-  /* Horní lišta */
-  .title-bar {
     min-height: 24px;
+
     touch-action: none;
   }
 
@@ -319,33 +430,124 @@ body {
     max-width: calc(100vw - 115px);
 
     overflow: hidden;
+
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 
-  /* Na mobilu je okno už skoro maximalizované */
   .title-bar-controls button[aria-label="Maximize"] {
     display: none;
   }
 
-  /* Obrázky projektů */
+
+  /* ========================================
+     TĚLO OKNA
+     ======================================== */
+
+  .window > .window-body {
+    display: flex !important;
+    flex-direction: column !important;
+
+    height: calc(100% - 26px) !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 8px !important;
+
+    box-sizing: border-box;
+
+    overflow: hidden !important;
+  }
+
+  .window-content {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding-right: 2px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* ========================================
+     SPODNÍ TLAČÍTKA OKEN
+     ======================================== */
+
+  .window-actions,
+  .cv-actions {
+    position: relative;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+
+    flex-shrink: 0 !important;
+
+    margin-top: 6px;
+    padding: 7px 0 2px;
+
+    z-index: 10;
+
+    background: #c0c0c0;
+    border-top: 1px solid #808080;
+  }
+
+  .window-actions button,
+  .cv-actions button {
+    min-height: 28px;
+  }
+
+
+  /* ========================================
+     OKNA BEZ .window-content
+     ======================================== */
+
+  #about-win .window-body,
+  #projects-win .window-body,
+  #skills-win .window-body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  /* ========================================
+     OBRÁZKY A TEXTOVÁ POLE
+     ======================================== */
+
   .window-body img {
     max-width: 100% !important;
     height: auto !important;
   }
 
-  /* Textová pole s kódem */
   textarea {
     max-width: 100%;
+
     box-sizing: border-box;
   }
 
-  /* Fraud Detection: ze dvou sloupců do jednoho */
-  #project-fraud-win .window-body > div:first-of-type {
+  .window-body a {
+    overflow-wrap: anywhere;
+  }
+
+
+  /* ========================================
+     FRAUD DETECTION
+     ======================================== */
+
+  #project-fraud-win .fraud-layout {
     display: block !important;
   }
 
-  #project-fraud-win .window-body > div:first-of-type > div {
+  #project-fraud-win .fraud-layout > div {
     width: 100%;
     min-width: 0 !important;
   }
@@ -354,30 +556,50 @@ body {
     max-height: 450px !important;
   }
 
-  /* E-commerce a Crime okna */
-  #project-ecommerce-win,
-  #project-crime-win,
-  #project-fraud-win,
-  #cv-win {
-    width: calc(100vw - 10px) !important;
-    height: calc(100vh - 42px) !important;
-  }
 
-  /* CV okno */
-  #cv-win iframe {
-    min-height: 400px;
-  }
+  /* ========================================
+     CV OKNO
+     ======================================== */
 
   #cv-win .window-body {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+
+    overflow: hidden !important;
   }
 
-  /* Taskbar */
+  #cv-win .cv-preview {
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    overflow: hidden;
+  }
+
+  #cv-win iframe {
+    width: 100%;
+    height: 100%;
+
+    min-height: 0;
+
+    border: none;
+  }
+
+
+  /* ========================================
+     TASKBAR NA MOBILU
+     ======================================== */
+
   .taskbar {
-    height: 34px;
+    height: calc(34px + env(safe-area-inset-bottom));
+
+    padding:
+      3px
+      3px
+      calc(3px + env(safe-area-inset-bottom));
+
     gap: 2px;
-    padding: 3px;
   }
 
   .start-btn {
@@ -395,92 +617,44 @@ body {
   }
 
   .taskbar-window-button {
-    min-width: 45px;
-    max-width: 100px;
+    min-width: 40px;
+    max-width: 90px;
     height: 26px;
 
     padding: 2px 5px;
+
     font-size: 10px;
   }
 
   .taskbar-time {
     padding: 3px 5px;
+
     font-size: 10px;
   }
 
-  /* Start menu */
+
+  /* ========================================
+     START MENU NA MOBILU
+     ======================================== */
+
   .start-menu {
-    bottom: 34px;
+    bottom: calc(34px + env(safe-area-inset-bottom));
     left: 2px;
 
     width: min(240px, calc(100vw - 4px));
-    max-height: calc(100vh - 45px);
+    max-height: calc(
+      100dvh -
+      45px -
+      env(safe-area-inset-top) -
+      env(safe-area-inset-bottom)
+    );
 
     overflow-y: auto;
   }
 
   .start-item {
     padding: 11px 12px;
+
     font-size: 13px;
-  }
-
-  /* Tlačítka uvnitř oken */
-  .window-body button {
-    min-height: 28px;
-  }
-
-  /* Odkazy se nesmějí roztahovat mimo okno */
-  .window-body a {
-    overflow-wrap: anywhere;
-  }
-}
-
-/* Všechna mobilní okna */
-@media screen and (max-width: 768px) {
-
-  .window > .window-body {
-    height: calc(100% - 26px) !important;
-    max-height: none !important;
-    box-sizing: border-box;
-
-    display: flex !important;
-    flex-direction: column !important;
-
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-
-    padding-bottom: 12px;
-  }
-
-  /* Poslední oddělovací čára před tlačítkem */
-  .window-body > hr:last-of-type {
-    margin-top: auto;
-    flex-shrink: 0;
-  }
-
-  /* Poslední tlačítko v každém okně */
-  .window-body > button:last-of-type {
-    flex-shrink: 0;
-    float: none !important;
-    align-self: flex-end;
-
-    position: sticky;
-    bottom: 0;
-
-    margin-top: 6px;
-    z-index: 5;
-  }
-
-  /* Spodní ovládací část */
-  .window-actions,
-  .cv-actions {
-    flex-shrink: 0 !important;
-
-    position: sticky;
-    bottom: 0;
-    z-index: 5;
-
-    background: #c0c0c0;
-    padding: 6px 0 2px;
   }
 }
