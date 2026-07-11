@@ -229,19 +229,22 @@ function makeDraggable(element) {
   header.addEventListener("mousedown", dragMouseDown);
 
   function dragMouseDown(event) {
-    if (event.target.closest("button")) return;
-    if (element.classList.contains("maximized")) return;
+  // Na telefonu okna nepřetahujeme
+  if (window.innerWidth <= 768) return;
 
-    event.preventDefault();
+  if (event.target.closest("button")) return;
+  if (element.classList.contains("maximized")) return;
 
-    bringToFront(element);
+  event.preventDefault();
 
-    previousMouseX = event.clientX;
-    previousMouseY = event.clientY;
+  bringToFront(element);
 
-    document.addEventListener("mousemove", elementDrag);
-    document.addEventListener("mouseup", stopDragging);
-  }
+  previousMouseX = event.clientX;
+  previousMouseY = event.clientY;
+
+  document.addEventListener("mousemove", elementDrag);
+  document.addEventListener("mouseup", stopDragging);
+}
 
   function elementDrag(event) {
     event.preventDefault();
