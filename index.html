@@ -33,10 +33,10 @@
       <span>Kontakt</span>
     </div>
     
-    <div class="desktop-icon" onclick="window.open('assets/CV_Max_Kubicek.pdf', '_blank')">
-      <img src="assets/w2k_text_document.ico" alt="Životopis PDF">
-      <span>Životopis.pdf</span>
-    </div>
+    <div class="desktop-icon" onclick="openWindow('cv-win')">
+  <img src="assets/w2k_text_document.ico" alt="Životopis PDF">
+  <span>Životopis.pdf</span>
+</div>
 
     <div class="desktop-icon" onclick="openWindow('recycle-win')">
   <img src="assets/w98_recycle_bin_full_cool.ico" alt="Koš">
@@ -513,7 +513,89 @@ if op == "+":
     <button onclick="closeWindow('first-project-win')" style="float: right;">Obnovit ze smazaných</button>
   </div>
 </div>
-  
+  <div
+  class="window draggable"
+  id="cv-win"
+  style="
+    display: none;
+    top: 40px;
+    left: 160px;
+    width: 850px;
+    height: 720px;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 70px);
+  "
+>
+  <div class="title-bar">
+    <div class="title-bar-text">
+      Životopis.pdf - Adobe Acrobat Reader
+    </div>
+
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+
+  <div
+    class="window-body"
+    style="
+      height: calc(100% - 35px);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    "
+  >
+    <div
+      style="
+        flex: 1;
+        min-height: 0;
+        background: #808080;
+        border: 2px inset #dfdfdf;
+        padding: 4px;
+      "
+    >
+      <iframe
+        src="assets/CV_Max_Kubicek.pdf"
+        title="Životopis Max Kubíček"
+        style="
+          width: 100%;
+          height: 100%;
+          border: none;
+          background: white;
+          display: block;
+        "
+      ></iframe>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 8px;
+      "
+    >
+      <a
+        href="assets/CV_Max_Kubicek.pdf"
+        download="CV_Max_Kubicek.pdf"
+        style="text-decoration: none;"
+      >
+        <button type="button">
+          Stáhnout CV
+        </button>
+      </a>
+
+      <button
+        type="button"
+        onclick="closeWindow('cv-win')"
+      >
+        Zavřít
+      </button>
+    </div>
+  </div>
+</div>
   <div class="taskbar">
     <button class="start-btn" onclick="toggleStartMenu()">
       <img src="assets/w98_windows.ico" width="16" alt="Start">
@@ -530,7 +612,7 @@ if op == "+":
         <div class="start-item" onclick="openWindow('skills-win')">Dovednosti</div>
         <div class="start-item" onclick="openWindow('contact-win')">Kontakt</div>
         <hr style="margin: 2px 0; border-style: inset;">
-        <div class="start-item" onclick="window.open('assets/CV_Max_Kubicek.pdf', '_blank')">📄 Životopis (PDF)</div>
+        <div class="start-item" onclick="openWindow('cv-win')">📄 Životopis (PDF)</div>
       </div>
     </div>
 
