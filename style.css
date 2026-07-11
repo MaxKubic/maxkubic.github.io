@@ -28,13 +28,12 @@ body {
    ========================================== */
 
 .desktop {
-  padding: 20px;
-
   display: flex;
   flex-direction: column;
   gap: 20px;
 
   width: max-content;
+  padding: 20px;
 }
 
 .desktop-icon {
@@ -69,6 +68,9 @@ body {
 
 .window {
   position: absolute;
+
+  box-sizing: border-box;
+
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -103,8 +105,8 @@ body {
   margin-top: 8px;
   padding-top: 8px;
 
-  border-top: 1px solid #808080;
   background: #c0c0c0;
+  border-top: 1px solid #808080;
 }
 
 .window-actions a {
@@ -339,6 +341,54 @@ body {
 
 
 /* ==========================================
+   CV – DESKTOP
+   ========================================== */
+
+.cv-window-body {
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100% - 30px);
+  min-height: 0;
+
+  padding: 8px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cv-preview {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 4px;
+
+  box-sizing: border-box;
+
+  background: #808080;
+  border: 2px inset #dfdfdf;
+
+  overflow: hidden;
+}
+
+.cv-preview iframe {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  background: white;
+}
+
+.cv-mobile-placeholder {
+  display: none;
+}
+
+
+/* ==========================================
    MOBILNÍ VERZE
    ========================================== */
 
@@ -427,7 +477,7 @@ body {
   }
 
   .title-bar-text {
-    max-width: calc(100vw - 115px);
+    max-width: calc(100vw - 100px);
 
     overflow: hidden;
 
@@ -455,21 +505,21 @@ body {
 
     padding: 8px !important;
 
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 
     overflow: hidden !important;
   }
 
-  .window-content {
-    flex: 1;
+  .window > .window-body > .window-content {
+    flex: 1 1 auto !important;
 
-    min-width: 0;
-    min-height: 0;
+    min-width: 0 !important;
+    min-height: 0 !important;
 
     padding-right: 2px;
 
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
 
     -webkit-overflow-scrolling: touch;
   }
@@ -479,28 +529,32 @@ body {
      SPODNÍ TLAČÍTKA OKEN
      ======================================== */
 
-  .window-actions,
-  .cv-actions {
-    position: relative;
+  .window > .window-body > .window-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 6px !important;
 
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 6px;
+    flex: 0 0 auto !important;
+    flex-wrap: wrap;
 
-    flex-shrink: 0 !important;
+    width: 100% !important;
+    min-height: 36px !important;
 
-    margin-top: 6px;
-    padding: 7px 0 2px;
+    margin: 6px 0 0 !important;
+    padding: 6px 0 2px !important;
 
-    z-index: 10;
+    position: relative !important;
 
-    background: #c0c0c0;
-    border-top: 1px solid #808080;
+    box-sizing: border-box !important;
+
+    background: #c0c0c0 !important;
+    border-top: 1px solid #808080 !important;
+
+    z-index: 100 !important;
   }
 
-  .window-actions button,
-  .cv-actions button {
+  .window-actions button {
     min-height: 28px;
   }
 
@@ -512,8 +566,8 @@ body {
   #about-win .window-body,
   #projects-win .window-body,
   #skills-win .window-body {
-    overflow-y: auto !important;
     overflow-x: hidden !important;
+    overflow-y: auto !important;
 
     -webkit-overflow-scrolling: touch;
   }
@@ -558,32 +612,96 @@ body {
 
 
   /* ========================================
-     CV OKNO
+     CV NA MOBILU
      ======================================== */
 
-  #cv-win .window-body {
+  #cv-win .cv-window-body {
     display: flex !important;
     flex-direction: column !important;
+
+    height: calc(100% - 26px) !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    padding: 8px !important;
+
+    box-sizing: border-box !important;
 
     overflow: hidden !important;
   }
 
+  /* PDF iframe v mobilním Safari skryjeme */
   #cv-win .cv-preview {
-    flex: 1;
+    display: none !important;
+  }
+
+  #cv-win .cv-mobile-placeholder {
+    display: flex;
+
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     min-width: 0;
     min-height: 0;
 
-    overflow: hidden;
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background: white;
+    border: 2px inset #dfdfdf;
+
+    overflow-y: auto;
   }
 
-  #cv-win iframe {
-    width: 100%;
-    height: 100%;
+  #cv-win .cv-mobile-placeholder img {
+    width: 48px !important;
+    height: 48px !important;
 
-    min-height: 0;
+    margin-bottom: 12px;
+  }
 
-    border: none;
+  #cv-win .cv-mobile-placeholder strong {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+  }
+
+  #cv-win .cv-mobile-placeholder p {
+    max-width: 280px;
+    margin: 0;
+
+    line-height: 1.4;
+  }
+
+  #cv-win .window-actions {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 6px !important;
+
+    flex: 0 0 auto !important;
+    flex-wrap: wrap;
+
+    width: 100% !important;
+    min-height: 38px !important;
+
+    margin: 6px 0 0 !important;
+    padding: 6px 0 2px !important;
+
+    position: relative !important;
+
+    box-sizing: border-box !important;
+
+    background: #c0c0c0 !important;
+    border-top: 1px solid #808080 !important;
+
+    z-index: 1000 !important;
   }
 
 
@@ -642,6 +760,7 @@ body {
     left: 2px;
 
     width: min(240px, calc(100vw - 4px));
+
     max-height: calc(
       100dvh -
       45px -
