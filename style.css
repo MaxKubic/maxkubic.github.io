@@ -235,3 +235,202 @@ body {
 .clickable-project:active {
   background-color: #e0e0e0;
 }
+
+/* ==========================================
+   MOBILNÍ VERZE
+   ========================================== */
+@media screen and (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  /* Plocha s ikonami */
+  .desktop {
+    width: 100%;
+    height: calc(100vh - 34px);
+    box-sizing: border-box;
+
+    padding: 14px 10px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 78px);
+    grid-auto-rows: 80px;
+    align-content: start;
+    justify-content: start;
+
+    gap: 12px 6px;
+  }
+
+  .desktop-icon {
+    width: 78px;
+    font-size: 11px;
+  }
+
+  .desktop-icon img {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Všechna otevřená okna na mobilu */
+  .window {
+    position: fixed !important;
+
+    top: 5px !important;
+    left: 5px !important;
+
+    width: calc(100vw - 10px) !important;
+    height: calc(100vh - 42px) !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /* Obsah okna */
+  .window > .window-body {
+    height: calc(100% - 30px) !important;
+    max-height: none !important;
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+
+    padding: 8px;
+  }
+
+  /* Horní lišta */
+  .title-bar {
+    min-height: 24px;
+    touch-action: none;
+  }
+
+  .title-bar-text {
+    max-width: calc(100vw - 115px);
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  /* Na mobilu je okno už skoro maximalizované */
+  .title-bar-controls button[aria-label="Maximize"] {
+    display: none;
+  }
+
+  /* Obrázky projektů */
+  .window-body img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Textová pole s kódem */
+  textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fraud Detection: ze dvou sloupců do jednoho */
+  #project-fraud-win .window-body > div:first-of-type {
+    display: block !important;
+  }
+
+  #project-fraud-win .window-body > div:first-of-type > div {
+    width: 100%;
+    min-width: 0 !important;
+  }
+
+  #project-fraud-win img {
+    max-height: 450px !important;
+  }
+
+  /* E-commerce a Crime okna */
+  #project-ecommerce-win,
+  #project-crime-win,
+  #project-fraud-win,
+  #cv-win {
+    width: calc(100vw - 10px) !important;
+    height: calc(100vh - 42px) !important;
+  }
+
+  /* CV okno */
+  #cv-win iframe {
+    min-height: 400px;
+  }
+
+  #cv-win .window-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Taskbar */
+  .taskbar {
+    height: 34px;
+    gap: 2px;
+    padding: 3px;
+  }
+
+  .start-btn {
+    height: 26px;
+    padding: 2px 5px;
+  }
+
+  .start-btn strong {
+    display: none;
+  }
+
+  .taskbar-windows {
+    height: 26px;
+    gap: 2px;
+  }
+
+  .taskbar-window-button {
+    min-width: 45px;
+    max-width: 100px;
+    height: 26px;
+
+    padding: 2px 5px;
+    font-size: 10px;
+  }
+
+  .taskbar-time {
+    padding: 3px 5px;
+    font-size: 10px;
+  }
+
+  /* Start menu */
+  .start-menu {
+    bottom: 34px;
+    left: 2px;
+
+    width: min(240px, calc(100vw - 4px));
+    max-height: calc(100vh - 45px);
+
+    overflow-y: auto;
+  }
+
+  .start-item {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  /* Tlačítka uvnitř oken */
+  .window-body button {
+    min-height: 28px;
+  }
+
+  /* Odkazy se nesmějí roztahovat mimo okno */
+  .window-body a {
+    overflow-wrap: anywhere;
+  }
+}
