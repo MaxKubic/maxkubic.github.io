@@ -389,6 +389,38 @@ body {
 
 
 /* ==========================================
+   HR ANALYTICS – SCROLLOVATELNÝ OBSAH
+   ========================================== */
+
+#project-hr-win .window-body {
+  display: flex;
+  flex-direction: column;
+
+  height: calc(100% - 30px);
+  min-height: 0;
+
+  padding: 8px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#project-hr-win .window-content {
+  flex: 1;
+
+  min-height: 0;
+
+  padding-right: 6px;
+
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* ==========================================
    MOBILNÍ VERZE
    ========================================== */
 
