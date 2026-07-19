@@ -295,6 +295,37 @@
 
       </div>
 
+      <div
+        class="project-box clickable-project"
+        onclick="openWindow('project-hr-win')"
+      >
+
+        <h3>
+          HR Analytics: Attrition, Training ROI &amp; Pay Equity
+        </h3>
+
+        <p>
+          Analýza HR dat zaměřená na příčiny odchodu zaměstnanců,
+          návratnost investic do školení a rovnost odměňování
+          napříč skupinami zaměstnanců.
+        </p>
+
+        <p>
+          <strong>Nástroje:</strong>
+          Python, Pandas, SQL, Matplotlib, Seaborn, Jupyter
+        </p>
+
+        <small
+          style="
+            color: #000080;
+            text-decoration: underline;
+          "
+        >
+          Klikněte pro detail a kód &raquo;
+        </small>
+
+      </div>
+
     </div>
   </div>
 
@@ -870,6 +901,209 @@ pipeline.fit(X_train, y_train)</textarea>
 
       <div class="window-actions">
         <button onclick="closeWindow('project-fraud-win')">
+          Zavřít
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       HR ANALYTICS DETAIL
+       ========================= -->
+
+  <div
+    class="window draggable"
+    id="project-hr-win"
+    style="
+      display: none;
+      top: 70px;
+      left: 140px;
+      width: 700px;
+      max-height: 820px;
+    "
+  >
+
+    <div class="title-bar">
+
+      <div class="title-bar-text">
+        HR Analytics - Detail
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+
+    </div>
+
+    <div class="window-body">
+
+      <div class="window-content">
+
+        <h3>
+          HR Analytics: Attrition, Training ROI &amp; Pay Equity
+        </h3>
+
+        <p>
+          Analýza HR dat fiktivní firmy zaměřená na tři klíčové otázky:
+          proč zaměstnanci odcházejí, jestli se firmě vyplácí investice
+          do školení a jestli existují neopodstatněné rozdíly
+          v odměňování napříč skupinami zaměstnanců. Projekt pokrývá
+          celý proces – od čištění dat přes SQL a pandas analýzu
+          až po vizualizace a konkrétní doporučení.
+        </p>
+
+        <p>
+          <strong>Klíčová zjištění:</strong>
+        </p>
+
+        <ul>
+          <li>
+            Celková míra odchodu (attrition) v datasetu je 51,1 %,
+            přičemž žádná ze sledovaných proměnných (satisfaction,
+            engagement, work-life balance, výkon, věk, business unit)
+            nevykazuje silný vztah k odchodu.
+          </li>
+          <li>
+            Z celkových nákladů na školení $1 675 886 šlo téměř
+            49,4 % ($828 402) na tréninky, které zaměstnanci
+            nedokončili nebo v nich neuspěli – bez měřitelného
+            rozdílu v satisfaction či performance oproti úspěšným
+            absolventům.
+          </li>
+          <li>
+            Zastoupení genderu i rasy napříč platovými zónami je
+            rovnoměrné (rozdíly do 3 procentních bodů) – nebyly
+            nalezeny známky systematické nerovnosti v odměňování.
+          </li>
+        </ul>
+
+        <p>
+          <strong>Ukázka vizualizací:</strong>
+        </p>
+
+        <div
+          class="project-box"
+          style="text-align: center;"
+        >
+
+          <img
+            src="assets/attrition_by_business_unit.png"
+            alt="Míra attrition podle business unit"
+            style="
+              max-width: 100%;
+              border: 1px solid #808080;
+            "
+          >
+
+        </div>
+
+        <div
+          class="project-box"
+          style="text-align: center;"
+        >
+
+          <img
+            src="assets/training_cost_breakdown.png"
+            alt="Rozdělení nákladů na školení podle výsledku"
+            style="
+              max-width: 100%;
+              border: 1px solid #808080;
+            "
+          >
+
+        </div>
+
+        <div
+          class="project-box"
+          style="text-align: center;"
+        >
+
+          <img
+            src="assets/attrition_vs_scores.png"
+            alt="Satisfaction, engagement a work-life balance skóre vs. attrition"
+            style="
+              max-width: 100%;
+              border: 1px solid #808080;
+            "
+          >
+
+        </div>
+
+        <p>
+          <strong>Ukázka kódu (Pay Equity analýza):</strong>
+        </p>
+
+        <div class="field-row-stacked">
+
+          <textarea
+            readonly
+            rows="14"
+            style="
+              width: 100%;
+              box-sizing: border-box;
+              font-family: monospace;
+              background: #000;
+              color: #00ff00;
+              resize: none;
+            "
+          >import pandas as pd
+
+df = pd.read_csv("../data/processed/HR_Dataset_Clean.csv")
+df["Attrition"] = df["Attrition"].astype(bool)
+
+# Zastoupení genderu v jednotlivých platových zónách
+pd.crosstab(
+    df["PayZone"],
+    df["GenderCode"],
+    normalize="index"
+) * 100
+
+# Zastoupení rasy v jednotlivých platových zónách
+pd.crosstab(
+    df["PayZone"],
+    df["RaceDesc"],
+    normalize="index"
+) * 100
+
+# Průměrné hodnocení výkonu podle genderu
+df.groupby("GenderCode")["Current Employee Rating"].mean()</textarea>
+
+        </div>
+
+        <p>
+          <strong>Dataset:</strong>
+          <br>
+
+          <a
+            href="https://www.kaggle.com/datasets/hopesb/hr-analytics-dataset"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            HR Analytics Dataset na Kaggle
+          </a>
+        </p>
+
+        <p>
+          <strong>GitHub:</strong>
+          <br>
+
+          <a
+            href="https://github.com/MaxKubic/hr-analytics"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zobrazit repozitář
+          </a>
+        </p>
+
+      </div>
+
+      <div class="window-actions">
+        <button onclick="closeWindow('project-hr-win')">
           Zavřít
         </button>
       </div>
